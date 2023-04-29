@@ -2,31 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerScript : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float speed;
-
-    private Vector2 velocity;
-
-
+    public GameObject player;
+    public new Camera camera;
+    public float scalingFactor;
+    // Start is called before the first frame update
     void Start()
     {
-       rb= GetComponent<Rigidbody2D>();
-
+        camera = Camera.main;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        var inputH = Input.GetAxisRaw("Horizontal");
-        var inputV = Input.GetAxisRaw("Vertical");
-        velocity.x = inputH;
-        velocity.y = inputV;
+        var position1 = player.transform.position;
+        Vector2 position = position1;
+        float camDis = camera.transform.position.z - position1.z;
+        Vector2 mouseScreenPosition = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -camDis));
 
-    }
+        float xPos = (mouseScreenPosition.x - position.x) * scalingFactor;
+        float yPos = (mouseScreenPosition.y - position.y) * scalingFactor;
 
-    private void FixedUpdate()
-    {
-        rb.velocity = velocity * speed;
+        transform.position = new Vector3(position.x + xPos, position.y + yPos, -10);
     }
 }
