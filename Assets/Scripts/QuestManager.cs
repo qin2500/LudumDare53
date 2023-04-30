@@ -1,20 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mail : MonoBehaviour
+public class QuestManager : MonoBehaviour
 {
     public GameObject player;
+    public GameObject client;
 
     private float passedTime;
     private float deltaTime = 2;
 
     public Quest[] possibleQuests;
+    private PlayerControllerScript playerControllerScript;
     private List<Quest> visibleQuests;
 
     void Start()
     {
         passedTime = 0;
         visibleQuests = new List<Quest>();
+        playerControllerScript = player.GetComponent<PlayerControllerScript>();
     }
 
     void Update()
@@ -28,24 +31,19 @@ public class Mail : MonoBehaviour
 
             Quest newQuest = possibleQuests[Random.Range(0, possibleQuests.Length)];
             Debug.Log(newQuest.name + " init");
-            newQuest.startQuest();
             visibleQuests.Add(newQuest);
+            acceptQuest(newQuest);
         }
 
         foreach (Quest quest in visibleQuests)
         {
             if (quest.questActive)
             {
-                quest.timePassed += Time.deltaTime;
+                quest.progressTime();
 
-                if (quest.timePassed > quest.timeLimit)
+                if (quest.getTimePassed() > quest.timeLimit)
                 {
-                    quest.failQuest();
-                }
-
-                if ((Vector2) player.transform.position == quest.deliveryPos && quest.checkCowInventory())
-                {
-                    quest.completeQuest();
+                    concludeQuest(quest, false);
                 }
             }
         }
@@ -54,10 +52,13 @@ public class Mail : MonoBehaviour
     public void acceptQuest(Quest quest)
     {
         quest.startQuest();
+
+        ClientController temp = (ClientController) Instantiate(client).GetComponent<ClientController>();
+        temp.setQuestManager(this);
     }
-    public void concludeQuest(Quest quest)
+    public void concludeQuest(Quest quest, bool sucess)
     {
-        Debug.Log(quest.name + " : concluded");
+        Debug.Log(quest.name + " : sucess: " + sucess);
         quest.questActive = false;
     }
 

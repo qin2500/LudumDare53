@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747c1ab4fefbcd848a465334c466f7c1, type: 3}
-  m_Name: Quest2
+  m_Script: {fileID: 11500000, guid: af4dd356cd0240e4faee90e348ba61b9, type: 3}
+  m_Name: Client1
   m_EditorClassIdentifier: 
-  name: Get Drunk
-  timeLimit: 720
-  questActive: 0
-  requiredCows: 04000000020000000000000000000000
+  requiredCows: 
+  rMin: 0
+  rMax: 0
+  spawnOrigin: {x: 0, y: 0}

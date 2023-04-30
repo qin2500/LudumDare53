@@ -7,50 +7,44 @@ public class Quest : ScriptableObject
 {
     public new string name;
     public float timeLimit;
-    public float timePassed;
-    public bool questActive;
+    public bool questActive = false;
 
-    public Vector2 deliveryPos;
+    private float timePassed;
+    private Client client;
 
     public int[] requiredCows;
-
-    private GameObject player;
-    private PlayerControllerScript playerScript;    
 
     void Awake()
     {
         timePassed = 0;
-        player = GameObject.Find(name = "cowboy");
-        playerScript = player.GetComponent<PlayerControllerScript>();
-    }
-
-    public void completeQuest()
-    {
-        GameObject.Find(name = "Mailbox").GetComponent<Mail>().concludeQuest(this);
-        Debug.Log(name + " : won");
-    }
-
-    public void failQuest()
-    {
-        GameObject.Find(name = "Mailbox").GetComponent<Mail>().concludeQuest(this);
-        Debug.Log(name + " : lost");
     }
 
     public void startQuest()
     {
         Debug.Log(name + " started");
+
         questActive = true;
+
+        client = CreateInstance<Client>();
+        client.requiredCows = this.requiredCows;
+        client.rMin = 0;
+        client.rMax = 2;
+        client.spawnOrigin = new Vector2(3, 3);
+        client.setQuest(this);
     }
 
-    public bool checkCowInventory()
+    public void progressTime()
     {
-        List<Cow> temp = playerScript.getCows();
+        this.timePassed += Time.deltaTime;
+    }
 
-        foreach(Cow cow in temp)
-        {
-            requiredCows[cow.id] -= 1;
-        }
+    public float getTimePassed()
+    {
+        return this.timePassed;
+    }
 
-        return requiredCows.Sum() <= 0;
+    public Client getClient()
+    {
+        return this.client;
     }
 }
