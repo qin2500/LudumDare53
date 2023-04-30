@@ -6,13 +6,14 @@ public class PlayerControllerScript : MonoBehaviour
 {
     public float speed;
 
+    private List<Cow> cows;
     private Rigidbody2D rb;
     private Vector2 velocity;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        cows = new List<Cow>();
     }
 
     void Update()
@@ -28,5 +29,10 @@ public class PlayerControllerScript : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = velocity * speed;
+    }
+
+    public List<Cow> getCows()
+    {
+        return cows;
     }
 }

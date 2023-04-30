@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 747c1ab4fefbcd848a465334c466f7c1, type: 3}
-  m_Name: Test Quest
+  m_Name: Quest3
   m_EditorClassIdentifier: 
-  name: 
-  timeLimit: 0
+  name: Start Shitting
+  timeLimit: 2
   timePassed: 0
+  questStarted: 0
   deliveryPos: {x: 0, y: 0}
+  requiredCows: 01000000020000000300000004000000

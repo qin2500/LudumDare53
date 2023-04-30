@@ -4,6 +4,7 @@ using UnityEngine;
 public class Cow : ScriptableObject
 {
     public WanderingEntity wanderingEntity;
+    public int id;
 
     public bool lassoed = false;
     public bool scared = false;

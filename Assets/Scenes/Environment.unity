@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 795135011}
   - component: {fileID: 795135013}
   m_Layer: 0
-  m_Name: Mail
+  m_Name: Mailbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,6 +657,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3320bde579fb374d8e20d27c99868ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1417831554}
+  possibleQuests:
+  - {fileID: 11400000, guid: a821ea27e828f4548b81791e4979bb33, type: 2}
+  - {fileID: 11400000, guid: 952dd740591c4cf4e855e504cdcd70fd, type: 2}
+  - {fileID: 11400000, guid: 40cffd62bbc4fd746802ad5401400890, type: 2}
 --- !u!1 &981336843
 GameObject:
   m_ObjectHideFlags: 0
