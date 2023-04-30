@@ -86,14 +86,12 @@ public class WonderController : MonoBehaviour
             Vector2 polarPos = new Vector2(Mathf.Sqrt(Mathf.Pow(newPos.x,2) + Mathf.Pow(newPos.y,2)), Mathf.Atan(newPos.y/newPos.x));
 
             //if (polarPos.y < 0) polarPos.y += 2 * Mathf.PI;
-
-            Debug.Log(polarPos.y);
             if (polarPos.x < wonderAreaRadius) return dir;
 
             //if (dist < wonderAreaRadius) return dir;
 
             timeac += Time.deltaTime;
-            if (timeac > 2) return Vector2.up;
+            if (timeac > 2) return ((Vector2)transform.position - wonderOrigin).normalized;
         }
         
         

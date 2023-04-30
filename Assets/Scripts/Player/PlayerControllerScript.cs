@@ -5,16 +5,18 @@ using UnityEngine;
 public class PlayerControllerScript : MonoBehaviour
 {
     
+
     public float speed;
 
     private Rigidbody2D rb;
     private Vector2 velocity;
 
+    
 
     void Start()
     {
        rb= GetComponent<Rigidbody2D>();
-
+       
     }
 
     void Update()
@@ -25,6 +27,8 @@ public class PlayerControllerScript : MonoBehaviour
         velocity.y = inputV;
 
         velocity.Normalize();
+
+
 
     }
 
