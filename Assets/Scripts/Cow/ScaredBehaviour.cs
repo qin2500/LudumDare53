@@ -7,16 +7,20 @@ using UnityEngine;
 public class ScaredBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private CowBehaviour cowBehaviour;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        cowBehaviour = GetComponent<CowBehaviour>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //if detect scary things, flee()
+
+        //set cowBehaviour.scared = true while inside scared radius
     }
 
     public (Vector2, int) flee(GameObject other)
