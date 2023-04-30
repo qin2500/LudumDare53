@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class WonderController : MonoBehaviour
+public class WanderController : MonoBehaviour
 {
     private Vector2 velocity;
     private Rigidbody2D rb;
@@ -21,6 +21,7 @@ public class WonderController : MonoBehaviour
     public float wonderRangeMin;
     public float wonderRange;
     public float wonderSpeed;
+
     private Vector2 lastPos;
     private Vector2 wonderOrigin;
 
@@ -37,19 +38,26 @@ public class WonderController : MonoBehaviour
     void Update()
     {
         travelDist = Vector2.Distance(transform.position, lastPos);
-        if(travelDist >= wonderRange)
+
+        if (travelDist >= wonderRange)
         {
             rb.velocity = Vector2.zero;
-            if(wonderFrequencyAC + Time.deltaTime >= wonderFrequency)
+
+            if (wonderFrequencyAC + Time.deltaTime >= wonderFrequency)
             {
                 float p = Random.value;
-                if(p <= wonderProbobility)
+
+                if (p <= wonderProbobility)
                 {
                     wonderRange = Random.Range(wonderRangeMin, wonderRangeMax);
                     velocity = pickDirection();
                     lastPos = this.transform.position;
                     wonderFrequencyAC = 0;
-                    if (wonderOriginFollowsEntity) wonderOrigin = this.transform.position;
+
+                    if (wonderOriginFollowsEntity)
+                    {
+                        wonderOrigin = this.transform.position;
+                    }
                 }
             }
             else
@@ -57,27 +65,24 @@ public class WonderController : MonoBehaviour
                 wonderFrequencyAC += Time.deltaTime;
             }
         }
-        
     }
     
     private void FixedUpdate()
     {
-        
         if (travelDist <= wonderRange)rb.velocity = velocity * wonderSpeed;
     }
 
     private Vector2 pickDirection()
     {
         float timeac = 0;
+        
         while(true)
         {
             float x = Random.Range(-1f, 1f);
             float y = Random.Range(-Mathf.Sqrt(1 - Mathf.Pow(x, 2)), Mathf.Sqrt(1 - Mathf.Pow(x, 2)));
 
-
             //Debug.Log(x + " | " + y);
             Vector2 dir = new Vector2(x,y).normalized;
-
 
             //float dist = Vector2.Distance(wonderOrigin, (Vector2)transform.position + dir*wonderRange);
 
@@ -86,6 +91,7 @@ public class WonderController : MonoBehaviour
             Vector2 polarPos = new Vector2(Mathf.Sqrt(Mathf.Pow(newPos.x,2) + Mathf.Pow(newPos.y,2)), Mathf.Atan(newPos.y/newPos.x));
 
             //if (polarPos.y < 0) polarPos.y += 2 * Mathf.PI;
+
             if (polarPos.x < wonderAreaRadius) return dir;
 
             //if (dist < wonderAreaRadius) return dir;
@@ -93,9 +99,6 @@ public class WonderController : MonoBehaviour
             timeac += Time.deltaTime;
             if (timeac > 2) return ((Vector2)transform.position - wonderOrigin).normalized;
         }
-        
-        
-        
     }
 
     private void OnDrawGizmosSelected()
@@ -105,6 +108,7 @@ public class WonderController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, wonderRangeMax);
         Gizmos.color = Color.green;
+
         if (wonderOrigin != Vector2.zero)
         {
             Gizmos.DrawWireSphere(wonderOrigin, wonderAreaRadius);
