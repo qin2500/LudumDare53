@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class WanderController : MonoBehaviour
 {
+    public bool showGizmos;
     private Vector2 velocity;
     private Rigidbody2D rb;
     public bool wonderOriginFollowsEntity;
@@ -26,7 +27,12 @@ public class WanderController : MonoBehaviour
     private Vector2 wonderOrigin;
 
     private float travelDist;
-    // Start is called before the first frame update
+
+    private void OnEnable()
+    {
+        wonderOrigin = transform.position;
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,7 +45,7 @@ public class WanderController : MonoBehaviour
     {
         travelDist = Vector2.Distance(transform.position, lastPos);
 
-        if (travelDist >= wonderRange)
+        if (travelDist >= wonderRange || rb.velocity.magnitude < 0.01f)
         {
             rb.velocity = Vector2.zero;
 
@@ -103,29 +109,34 @@ public class WanderController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(this.transform.position, wonderRangeMin);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(this.transform.position, wonderRangeMax);
-        Gizmos.color = Color.green;
-
-        if (wonderOrigin != Vector2.zero)
+        if (showGizmos)
         {
-            Gizmos.DrawWireSphere(wonderOrigin, wonderAreaRadius);
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(this.transform.position, wonderRangeMin);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(this.transform.position, wonderRangeMax);
+            Gizmos.color = Color.green;
 
-            Gizmos.color = Color.yellow;
+            if (wonderOrigin != Vector2.zero)
+            {
+                Gizmos.DrawWireSphere(wonderOrigin, wonderAreaRadius);
 
-            Vector2 direction = new Vector2(Mathf.Cos(wonderAreaStartDegree), Mathf.Sin(wonderAreaStartDegree));
-            direction *= wonderAreaRadius;
-            direction += wonderOrigin;
+                Gizmos.color = Color.yellow;
+
+                Vector2 direction = new Vector2(Mathf.Cos(wonderAreaStartDegree), Mathf.Sin(wonderAreaStartDegree));
+                direction *= wonderAreaRadius;
+                direction += wonderOrigin;
             
-            Gizmos.DrawLine(wonderOrigin, direction);
+                Gizmos.DrawLine(wonderOrigin, direction);
 
-            direction = new Vector2(Mathf.Cos(wonderAreaEndDegree), Mathf.Sin(wonderAreaEndDegree));
-            direction *= wonderAreaRadius;
-            direction += wonderOrigin;
+                direction = new Vector2(Mathf.Cos(wonderAreaEndDegree), Mathf.Sin(wonderAreaEndDegree));
+                direction *= wonderAreaRadius;
+                direction += wonderOrigin;
             
-            Gizmos.DrawLine(wonderOrigin, direction);
+                Gizmos.DrawLine(wonderOrigin, direction);
+            }
+            else Gizmos.DrawWireSphere(transform.position, wonderAreaRadius);
         }
+        
     }
 }
