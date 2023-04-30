@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class CowBehaviour : MonoBehaviour
 {
+    public Cow cow;
     private Rigidbody2D rb;
     private WanderController wanderController;
     private ScaredBehaviour scaredBehaviour;
     private FollowBehaviour followBehaviour;
-    public bool lassoed = false;
-    public bool scared = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         wanderController = GetComponent(typeof(WanderController)) as WanderController;
         scaredBehaviour = GetComponent(typeof(ScaredBehaviour)) as ScaredBehaviour;
         followBehaviour = GetComponent(typeof (FollowBehaviour)) as FollowBehaviour;
+
         wanderController.enabled = true;
         scaredBehaviour.enabled = false;
         followBehaviour.enabled = false;
@@ -25,7 +24,7 @@ public class CowBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (lassoed && !scared)
+        if (cow.lassoed && !cow.scared)
         {
             wanderController.enabled = false;
             scaredBehaviour.enabled = false;
@@ -41,14 +40,14 @@ public class CowBehaviour : MonoBehaviour
             }
         }
 
-        if(scared)
+        if(cow.scared)
         {
             followBehaviour.enabled = false;
             wanderController.enabled = false;
             scaredBehaviour.enabled = true;
         }
 
-        if(!lassoed && !scared)
+        if(!cow.lassoed && !cow.scared)
         {
             followBehaviour.enabled = false;
             wanderController.enabled = true;
