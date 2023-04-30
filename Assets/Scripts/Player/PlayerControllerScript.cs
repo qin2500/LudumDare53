@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerControllerScript : MonoBehaviour
 {
-
     public float speed;
 
     private Rigidbody2D rb;
     private Vector2 velocity;
-
 
     void Start()
     {
@@ -25,7 +23,6 @@ public class PlayerControllerScript : MonoBehaviour
         velocity.y = inputV;
 
         velocity.Normalize();
-
     }
 
     private void FixedUpdate()

@@ -8,14 +8,14 @@ public class PlayerCollision : MonoBehaviour
     public GameObject interactionPrompt;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == player || collision.gameObject.name == "cowboy")
+        if (collision.gameObject == player)
         {
             interactionPrompt.SetActive(true);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject == player || collision.gameObject.name == "cowboy")
+        if (collision.gameObject == player)
         {
             interactionPrompt.SetActive(false);
         }   
