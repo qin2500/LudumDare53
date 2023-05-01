@@ -48,10 +48,7 @@ public class CowBehaviour : MonoBehaviour
 
         if (currentState.Equals("Hit"))
         {
-/*            GameObject progressUI = chargingCircle.transform.Find("binding-progress").GetComponent<GameObject>();
-*/
             float scale = (float) (cowHit.timeToLassoAC / cowHit.timeToLasso * 0.9);
-            /*Debug.Log(scale + ": " + cowHit.timeToLassoAC + ", " + cowHit.timeToLasso);*/
             Vector2 scaleVector = new Vector2(scale, scale);
 
             bindingProgressUI.transform.localScale = scaleVector;
