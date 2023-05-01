@@ -64,4 +64,16 @@ public class PlayerControllerScript : MonoBehaviour
     {
         return cows;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Bullet"))
+        {
+            List<GameObject> ropes = this.transform.GetChild(0).gameObject.GetComponent<PatchLassoController>().ropes;
+            foreach(GameObject gm in ropes)
+            {
+                gm.GetComponent<RopeController>().breakRope();
+            }
+        }
+    }
 }

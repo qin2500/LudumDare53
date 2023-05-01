@@ -80,8 +80,8 @@ public class SteeringAi : MonoBehaviour
         }
         else
         {
-            Debug.Log(Vector2.Distance(this.transform.position, aiData.currentTarget.transform.position));
-            if (Vector2.Distance(this.transform.position, aiData.currentTarget.transform.position) > followDistance)
+            //Debug.Log(Vector2.Distance(this.transform.position, aiData.currentTarget.transform.position));
+            if (aiData.currentTarget  && Vector2.Distance(this.transform.position, aiData.currentTarget.transform.position) > followDistance)
             {
                 rb.velocity = movementInput.normalized * speed;
 

@@ -9,9 +9,11 @@ public class PatchLassoController : MonoBehaviour
     public float growthSpeed;
     public float radius;
     public GameObject rope;
+    public List<GameObject> ropes;
     public float ropeMaxDist;
     public bool ropping;
     public Transform hand;
+    
 
     private Rigidbody2D rb;
     private LineRenderer lr;
@@ -92,6 +94,7 @@ public class PatchLassoController : MonoBehaviour
 
 
             GameObject connection = Instantiate(rope, this.transform.position, Quaternion.identity);
+            ropes.Add(connection);
             RopeController ropeController = connection.GetComponent<RopeController>();
             ropeController.player = player;
             ropeController.cow = collision.gameObject;
