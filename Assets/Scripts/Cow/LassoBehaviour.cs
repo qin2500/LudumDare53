@@ -30,21 +30,26 @@ public class LassoBehaviour : MonoBehaviour
     void Update()
     {
         float dist = Vector2.Distance(transform.position, player.transform.position);
-        
-        if(dist <= lassoRadius)
+
+        if (dist <= lassoRadius)
         {
-            if(timeToLassoAC + Time.deltaTime >= timeToLasso)
+            if (timeToLassoAC + Time.deltaTime >= timeToLasso)
             {
                 Debug.Log(timeToLassoAC);
                 Debug.Log("Lassoed!!!");
                 GetComponent<CowBehaviour>().followState();
                 timeToLassoAC = 0;
+                player.transform.GetChild(0).GetComponent<PatchLassoController>().ropping = false;
+                this.gameObject.tag = "Untagged";
+                
+                player.GetComponent<PlayerControllerScript>().addCow(GetComponent<Cow>());
             }
             else
             {
                 timeToLassoAC += Time.deltaTime;
             }
         }
+        else timeToLassoAC = 0;
     }
 
     private void OnDrawGizmosSelected()

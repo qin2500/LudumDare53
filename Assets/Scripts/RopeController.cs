@@ -29,14 +29,17 @@ public class RopeController : MonoBehaviour
 
         if (Vector2.Distance(player.transform.position, cow.transform.position) > maxDist)
         {
-            player.transform.GetChild(1).GetComponent<PatchLassoController>().ropping = false;
+            player.transform.GetChild(0).GetComponent<PatchLassoController>().ropping = false;
             cow.GetComponent<CowBehaviour>().wanderState();
+            cow.tag = "Cow";
             distroy();
+
         }
     }
 
-    public void distroy()
+    public void destroy()
     {
+        player.GetComponent<PlayerControllerScript>().removeCow(GetComponent<Cow>());
         Destroy(this.gameObject);
     }
 }

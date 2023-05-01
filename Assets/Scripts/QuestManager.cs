@@ -55,7 +55,8 @@ public class QuestManager : MonoBehaviour
     public void acceptQuest(Quest quest)
     {
         quest.startQuest();
-        ClientController temp = (ClientController) Instantiate(client).GetComponent<ClientController>();
+
+        ClientController temp = Instantiate(client).GetComponent<ClientController>();
         temp.setQuestManager(this);
     }
     public void concludeQuest(Quest quest, bool sucess)
