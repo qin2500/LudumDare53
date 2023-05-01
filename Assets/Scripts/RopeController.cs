@@ -31,12 +31,13 @@ public class RopeController : MonoBehaviour
         {
             player.transform.GetChild(0).GetComponent<PatchLassoController>().ropping = false;
             cow.GetComponent<CowBehaviour>().wanderState();
-            distroy();
+            destroy();
         }
     }
 
-    public void distroy()
+    public void destroy()
     {
+        player.GetComponent<PlayerControllerScript>().removeCow(GetComponent<Cow>());
         Destroy(this.gameObject);
     }
 }

@@ -42,8 +42,7 @@ public class LassoBehaviour : MonoBehaviour
                 player.transform.GetChild(0).GetComponent<PatchLassoController>().ropping = false;
                 this.gameObject.tag = "Untagged";
                 
-                //Add cow to player;
-
+                player.GetComponent<PlayerControllerScript>().addCow(GetComponent<Cow>());
             }
             else
             {

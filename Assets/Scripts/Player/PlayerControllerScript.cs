@@ -50,6 +50,16 @@ public class PlayerControllerScript : MonoBehaviour
         }
     }
 
+    public void addCow(Cow cow)
+    {
+        cows.Add(cow);
+    }
+
+    public void removeCow(Cow cow)
+    {
+        cows.Remove(cow);
+    }
+
     public List<Cow> getCows()
     {
         return cows;
