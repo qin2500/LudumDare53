@@ -140,6 +140,5 @@ public class CowBehaviour : MonoBehaviour
             }
             scaredState(poo);
         }
-        
     }
 }
