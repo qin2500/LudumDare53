@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 public class Sound
 {
     //holds all values to change in a clip

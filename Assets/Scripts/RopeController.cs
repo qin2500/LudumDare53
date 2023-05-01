@@ -31,7 +31,9 @@ public class RopeController : MonoBehaviour
         {
             player.transform.GetChild(0).GetComponent<PatchLassoController>().ropping = false;
             cow.GetComponent<CowBehaviour>().wanderState();
+            cow.tag = "Cow";
             destroy();
+
         }
     }
 

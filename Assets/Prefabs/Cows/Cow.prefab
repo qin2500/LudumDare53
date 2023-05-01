@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 5492449233646980383}
   - component: {fileID: 5492449233646980382}
   - component: {fileID: 5492449233646980381}
-  - component: {fileID: 8755283763194988620}
+  - component: {fileID: 9102353056144884406}
   - component: {fileID: 5492449233646980355}
   - component: {fileID: 5492449233646980380}
   - component: {fileID: 5492449233646980353}
@@ -516,7 +516,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8755283763194988620
+--- !u!114 &9102353056144884406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

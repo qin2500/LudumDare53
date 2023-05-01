@@ -52,13 +52,15 @@ public class SteeringAi : MonoBehaviour
 
     private void Update()
     {
-        if(fleeObjects.Count > 0 )
+        if (fleeObjects.Count > 0)
         {
+            dummy.SetActive(true);
             Vector2 average = averagePosition();
             dummy.transform.position = average;
             dummy.layer = 7;
             aiData.currentTarget = dummy.transform;
         }
+        else dummy.SetActive(false);
         if (aiData.currentTarget != null)
         {
             if (following == false)
