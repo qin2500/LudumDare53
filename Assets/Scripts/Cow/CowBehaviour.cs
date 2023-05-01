@@ -8,11 +8,8 @@ public class CowBehaviour : MonoBehaviour
 {
     public string currentState;
 
-    public int state;
     public GameObject bindingCircle;
     public GameObject bindingProgressUI;
-    public Cow cow;
-
     
 
     private WanderController wanderController;
@@ -54,7 +51,7 @@ public class CowBehaviour : MonoBehaviour
             steer.player = player;
 
         }        
-        }
+        
 
         if (currentState.Equals("Hit"))
         {

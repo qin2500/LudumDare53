@@ -12,7 +12,6 @@ public class ScaredBehaviour : MonoBehaviour
     public List<GameObject> scary;
     public String returnState;
     public float scareSpeed;
-    private SteeringAi steer;
 
     void Start()
     {

@@ -11,6 +11,7 @@ public class PatchLassoController : MonoBehaviour
     public GameObject rope;
     public float ropeMaxDist;
     public bool ropping;
+    public Transform hand;
 
     private Rigidbody2D rb;
     private LineRenderer lr;
@@ -32,7 +33,7 @@ public class PatchLassoController : MonoBehaviour
         if(lr.positionCount > 0)
         {
             lr.positionCount = 2;
-            if (player != null) lr.SetPosition(0, player.transform.position);
+            if (player != null) lr.SetPosition(0, hand.transform.position);
             else { lr.SetPosition(0, this.transform.position); }
             lr.SetPosition(1, this.transform.position);
         }
