@@ -26,7 +26,6 @@ public class CowBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         wanderController = GetComponent(typeof(WanderController)) as WanderController;
         scaredBehaviour = GetComponent(typeof(ScaredBehaviour)) as ScaredBehaviour;
-        followBehaviour = GetComponent(typeof (FollowBehaviour)) as FollowBehaviour;
         steer = GetComponent<SteeringAi>();
         cowHit = cowHit.GetComponent<LassoBehaviour>();
         steer.followDistance = followDistance;
@@ -35,7 +34,6 @@ public class CowBehaviour : MonoBehaviour
 
         wanderController.enabled = true;
         scaredBehaviour.enabled = false;
-        followBehaviour.enabled = false;
     }
     
     private void Update()
