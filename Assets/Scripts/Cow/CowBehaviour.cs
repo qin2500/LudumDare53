@@ -7,6 +7,12 @@ using UnityEngine;
 public class CowBehaviour : MonoBehaviour
 {
     public string currentState;
+
+    public int state;
+    public GameObject bindingCircle;
+    public GameObject bindingProgressUI;
+    public Cow cow;
+
     
 
     private WanderController wanderController;
@@ -31,7 +37,7 @@ public class CowBehaviour : MonoBehaviour
         steer = GetComponent<SteeringAi>();
         cowHit = GetComponent<LassoBehaviour>();
         steer.followDistance = followDistance;
-        
+
         wanderState();
 
         wanderController.enabled = true;
@@ -46,7 +52,17 @@ public class CowBehaviour : MonoBehaviour
         {
             cowHit.player = player;
             steer.player = player;
+
         }        
+        }
+
+        if (currentState.Equals("Hit"))
+        {
+            float scale = (float) (cowHit.timeToLassoAC / cowHit.timeToLasso * 0.9);
+            Vector2 scaleVector = new Vector2(scale, scale);
+
+            bindingProgressUI.transform.localScale = scaleVector;
+        }
     }
 
     public void wanderState()
@@ -57,6 +73,7 @@ public class CowBehaviour : MonoBehaviour
         scaredBehaviour.enabled = false;
         steer.enabled = false;
         cowHit.enabled = false;
+        bindingCircle.SetActive(false);
     }
     
     public void followState()
@@ -70,6 +87,7 @@ public class CowBehaviour : MonoBehaviour
         steer.flee = false;
         steer.followDistance = followDistance;
         cowHit.enabled = false;
+        bindingCircle.SetActive(false);
     }
     
     public void hitState()
@@ -82,6 +100,7 @@ public class CowBehaviour : MonoBehaviour
         steer.flee = true;
         cowHit.player = player;
         Invoke("setLassoedStatePlayer", 0.05f);
+        bindingCircle.SetActive(true);
     }
 
     public void scaredState(List<GameObject> p)
@@ -94,6 +113,7 @@ public class CowBehaviour : MonoBehaviour
         scaredBehaviour.scareSpeed = scareSpeed;
         steer.enabled = false;
         cowHit.enabled = false;
+        bindingCircle.SetActive(false);
     }
 
     public void setLassoedStatePlayer()

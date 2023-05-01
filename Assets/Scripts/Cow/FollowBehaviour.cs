@@ -8,7 +8,7 @@ public class FollowBehaviour : MonoBehaviour
 
     void Start()
     {
-        steer= GetComponent<SteeringAi>();
+        steer = GetComponent<SteeringAi>();
         steer.enabled= true;
         steer.flee = false;
     }

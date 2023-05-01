@@ -7,6 +7,7 @@ using UnityEngine;
 public class ScaredBehaviour : MonoBehaviour
 {
     private CowBehaviour cowBehaviour;
+    public SteeringAi steer;
 
     public List<GameObject> scary;
     public String returnState;
@@ -17,7 +18,7 @@ public class ScaredBehaviour : MonoBehaviour
     {
         steer = GetComponent<SteeringAi>();
         cowBehaviour = GetComponent<CowBehaviour>();
-        
+
     }
 
     // Update is called once per frame
