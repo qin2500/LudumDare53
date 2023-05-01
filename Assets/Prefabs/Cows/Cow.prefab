@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 5492449233646980383}
   - component: {fileID: 5492449233646980382}
   - component: {fileID: 5492449233646980381}
-  - component: {fileID: 8755283763194988620}
+  - component: {fileID: 9102353056144884406}
   - component: {fileID: 5492449233646980355}
   - component: {fileID: 5492449233646980380}
   - component: {fileID: 5492449233646980353}
@@ -516,7 +516,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8755283763194988620
+--- !u!114 &9102353056144884406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -525,10 +525,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5492449233646980379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ea3976f01bd6b409a0b79b2e176e70, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e8effc50351182489ce8ef870bfd88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Normal Cow
+  name: NormalCow
   id: 0
 --- !u!114 &5492449233646980355
 MonoBehaviour:

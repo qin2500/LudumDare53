@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 5224860004573513312}
   - component: {fileID: 5224860004573513315}
   - component: {fileID: 5224860004573513314}
-  - component: {fileID: 5224860004573513317}
+  - component: {fileID: 6579417028708040558}
   - component: {fileID: 5224860004573513316}
   - component: {fileID: 5224860004573513319}
   - component: {fileID: 5224860004573513318}
@@ -652,7 +652,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5224860004573513317
+--- !u!114 &6579417028708040558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -661,10 +661,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5224860004573513327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ea3976f01bd6b409a0b79b2e176e70, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e8effc50351182489ce8ef870bfd88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Lime Cow
+  name: LimeCow
   id: 1
 --- !u!114 &5224860004573513316
 MonoBehaviour:
