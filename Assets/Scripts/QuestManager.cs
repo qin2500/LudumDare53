@@ -5,6 +5,7 @@ public class QuestManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject client;
+    public EntitiesManager entitiesManager;
 
     private float passedTime;
     private float deltaTime = 2;
@@ -33,6 +34,7 @@ public class QuestManager : MonoBehaviour
             Debug.Log(newQuest.name + " init");
             visibleQuests.Add(newQuest);
             acceptQuest(newQuest);
+            entitiesManager.addQuestCows(newQuest.requiredCows);
         }
 
         foreach (Quest quest in visibleQuests)
@@ -60,6 +62,8 @@ public class QuestManager : MonoBehaviour
     {
         Debug.Log(quest.name + " : sucess: " + sucess);
         quest.questActive = false;
+
+        entitiesManager.removeQuestCows(quest.requiredCows, sucess);
     }
 
     public List<Quest> getActiveQuests()

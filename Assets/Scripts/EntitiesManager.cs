@@ -58,7 +58,7 @@ public class EntitiesManager : MonoBehaviour
         }
     }
 
-    public void removeQuestCows(int[] cows)
+    public void removeQuestCows(int[] cows, bool questSucess)
     {
         foreach (Cow cow in playerControllerScript.getCows())
         {
@@ -66,8 +66,12 @@ public class EntitiesManager : MonoBehaviour
             {
                 cows[cow.id]--;
                 questCows.Remove(cow);
-                cowEntities.Remove(cow);
-                Destroy(cow);
+
+                if(questSucess)
+                {
+                    cowEntities.Remove(cow);
+                    Destroy(cow);
+                }
             }
         }
 
