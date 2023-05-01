@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e92af5983cda154abe77ea57a4af392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showGizmos: 0
+  showGizmos: 1
   entity: {fileID: 11400000, guid: 86dc5221f1053cb45bce24061a8a063e, type: 2}
   wanderOriginFollowsEntity: 0
 --- !u!50 &10656525
@@ -274,9 +274,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flee: 1
   speed: 4
-  followDistance: 8
+  followDistance: 5
   fleeObject: {fileID: 0}
-  fleeDistance: 8
+  fleeDistance: 11
   player: {fileID: 0}
   steeringBehaviours:
   - {fileID: 340322554}
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee96c1278ee80c45b30b070884665bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 8535655945532787212}
   camera: {fileID: 0}
   scalingFactor: 0.2
 --- !u!1 &653451024
