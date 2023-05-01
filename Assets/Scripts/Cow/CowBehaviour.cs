@@ -7,6 +7,8 @@ public class CowBehaviour : MonoBehaviour
 {
     public string currentState;
     public int state;
+    public Cow cow;
+    
     private Rigidbody2D rb;
     private WanderController wanderController;
     private ScaredBehaviour scaredBehaviour;
@@ -22,7 +24,6 @@ public class CowBehaviour : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         wanderController = GetComponent(typeof(WanderController)) as WanderController;
         scaredBehaviour = GetComponent(typeof(ScaredBehaviour)) as ScaredBehaviour;
         followBehaviour = GetComponent(typeof (FollowBehaviour)) as FollowBehaviour;
@@ -31,7 +32,12 @@ public class CowBehaviour : MonoBehaviour
         steer.followDistance = followDistance;
         
         wanderState();
+
+        wanderController.enabled = true;
+        scaredBehaviour.enabled = false;
+        followBehaviour.enabled = false;
     }
+    
     private void Update()
     {
         if (player)
@@ -66,7 +72,6 @@ public class CowBehaviour : MonoBehaviour
         //    wanderController.enabled = false;
         //    scaredBehaviour.enabled = true;
         //}
-
         //if (!lassoed && !scared)
         //{
         //    followBehaviour.enabled = false;
@@ -74,7 +79,6 @@ public class CowBehaviour : MonoBehaviour
         //    scaredBehaviour.enabled = false;
         //    steer.enabled = false;
         //}
-        
     }
 
     public void wanderState()
@@ -85,6 +89,7 @@ public class CowBehaviour : MonoBehaviour
         steer.enabled = false;
         cowHit.enabled = false;
     }
+    
     public void followState()
     {
         currentState = "Lassoed";
@@ -96,6 +101,7 @@ public class CowBehaviour : MonoBehaviour
         steer.followDistance = followDistance;
         cowHit.enabled = false;
     }
+    
     public void hitState()
     {
         currentState = "Hit";
@@ -119,5 +125,4 @@ public class CowBehaviour : MonoBehaviour
     {
         cowHit.player = player;
     }
-
 }
