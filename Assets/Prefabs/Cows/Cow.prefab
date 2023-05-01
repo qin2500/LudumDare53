@@ -442,7 +442,6 @@ GameObject:
   - component: {fileID: 5492449233646980356}
   - component: {fileID: 5492449233646980359}
   - component: {fileID: 5492449233646980360}
-  - component: {fileID: 5492449233646980361}
   m_Layer: 0
   m_Name: Cow
   m_TagString: Cow
@@ -546,6 +545,7 @@ MonoBehaviour:
   currentState: 
   bindingCircle: {fileID: 5492449233587783217}
   bindingProgressUI: {fileID: 5492449232376600252}
+  bindingRange: {fileID: 5492449232526470761}
   player: {fileID: 0}
   cowHit: {fileID: 0}
   followDistance: 5
@@ -686,20 +686,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5492449233646980361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5492449233646980379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ea3976f01bd6b409a0b79b2e176e70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  id: 0
 --- !u!1 &5492449233648183016
 GameObject:
   m_ObjectHideFlags: 0
