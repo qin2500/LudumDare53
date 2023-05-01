@@ -38,7 +38,7 @@ public class CowBehaviour : MonoBehaviour
         cowHit = GetComponent<LassoBehaviour>();
         steer.followDistance = followDistance;
         rb= GetComponent<Rigidbody2D>();
-        anim    = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
 
         wanderState();
 
@@ -48,24 +48,29 @@ public class CowBehaviour : MonoBehaviour
         InvokeRepeating("spooky", 0, scareUpdateFrequency);
     }
     
-    private void Update()
+    void Update()
     {
         if (rb.velocity.magnitude > 0)
         {
             anim.Play("Run");
         }
         else anim.Play("Idle");    
+
         if (player)
         {
             cowHit.player = player;
             steer.player = player;
 
-        }        
-        
+        }
+
+        Debug.Log(currentState);
 
         if (currentState.Equals("Hit"))
         {
-            float scale = (float) (cowHit.timeToLassoAC / cowHit.timeToLasso * 0.9);
+            float scale = (float) (cowHit.timeToLassoAC / cowHit.timeToLasso * 1.7);
+
+            Debug.Log(scale + ": " + cowHit.timeToLassoAC + ", " + cowHit.timeToLasso);
+
             Vector2 scaleVector = new Vector2(scale, scale);
 
             bindingProgressUI.transform.localScale = scaleVector;
