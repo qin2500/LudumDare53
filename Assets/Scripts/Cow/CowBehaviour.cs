@@ -50,12 +50,11 @@ public class CowBehaviour : MonoBehaviour
     
     void Update()
     {
-        if (rb.velocity.magnitude > 0)
+        if (rb.velocity.magnitude < 0.1)
         {
-            anim.Play("Run");
+            anim.Play("Idle");
         }
-        else anim.Play("Idle");    
-
+        else anim.Play("Run");    
         if (player)
         {
             cowHit.player = player;
