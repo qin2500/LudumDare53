@@ -6,10 +6,12 @@ public class PauseScript : MonoBehaviour
 {
 
     public GameObject PausePanel;
+    public GameObject SettingsPanel;
     public static bool GameIsPause = false;
     // Update is called once per frame
     void Start(){
         PausePanel.SetActive(false);
+        SettingsPanel.SetActive(false);
 
     }
     void Update()
@@ -17,9 +19,11 @@ public class PauseScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)){
             if (GameIsPause){
                 Continue();
+
             }
             else{
                 Pause();
+
             }
         }
         
@@ -28,13 +32,20 @@ public class PauseScript : MonoBehaviour
 
     public void Pause(){
         PausePanel.SetActive(true);
+        SettingsPanel.SetActive(false);
         Time.timeScale = 0;
         GameIsPause = true;
     }
     public void Continue(){
         PausePanel.SetActive(false);
+        SettingsPanel.SetActive(false);
         Time.timeScale = 1;
         GameIsPause = false;
+    }
+
+    public bool getStatus()
+    {
+        return GameIsPause;
     }
 
 

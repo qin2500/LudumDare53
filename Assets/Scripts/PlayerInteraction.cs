@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
     private bool playerCollision = false;
     private int[] arr;
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject == player)

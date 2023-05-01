@@ -8,6 +8,7 @@ public class Quest : ScriptableObject
     public new string name;
     public float timeLimit;
     public bool questActive = false;
+    public new string text;
 
     private float timePassed;
     private Client client;
