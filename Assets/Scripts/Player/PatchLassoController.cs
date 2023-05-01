@@ -86,8 +86,9 @@ public class PatchLassoController : MonoBehaviour
             ropping = true;
             CowBehaviour cow = collision.gameObject.GetComponent<CowBehaviour>();
             moo = cow;
+            cow.player = player;
             cow.hitState();
-            cow.player = this.gameObject.transform.parent.gameObject;
+            
 
 
             GameObject connection = Instantiate(rope, this.transform.position, Quaternion.identity);
