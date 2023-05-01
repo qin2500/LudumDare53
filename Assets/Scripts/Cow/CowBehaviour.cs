@@ -106,6 +106,8 @@ public class CowBehaviour : MonoBehaviour
         wanderController.enabled = false;
         scaredBehaviour.enabled = false;
         cowHit.enabled = true;
+        steer.enabled = true;
+        steer.flee = true;
         cowHit.player = player;
         Invoke("setLassoedStatePlayer", 0.05f);
     }
