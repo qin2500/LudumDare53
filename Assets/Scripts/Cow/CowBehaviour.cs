@@ -27,6 +27,9 @@ public class CowBehaviour : MonoBehaviour
 
     public float followSpeed;
 
+    private Animator anim;
+    private Rigidbody2D rb;
+
     void Start()
     {
         wanderController = GetComponent(typeof(WanderController)) as WanderController;
@@ -34,6 +37,8 @@ public class CowBehaviour : MonoBehaviour
         steer = GetComponent<SteeringAi>();
         cowHit = GetComponent<LassoBehaviour>();
         steer.followDistance = followDistance;
+        rb= GetComponent<Rigidbody2D>();
+        anim    = GetComponent<Animator>();
 
         wanderState();
 
@@ -45,6 +50,11 @@ public class CowBehaviour : MonoBehaviour
     
     private void Update()
     {
+        if (rb.velocity.magnitude > 0)
+        {
+            anim.Play("Run");
+        }
+        else anim.Play("Idle");    
         if (player)
         {
             cowHit.player = player;
