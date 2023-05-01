@@ -18,7 +18,7 @@ public class WanderController : MonoBehaviour
     private Vector2 wanderOrigin;
 
     private float travelDist;
-
+    private float wanderRange;
     private void OnEnable()
     {
         wanderOrigin = transform.position;
@@ -28,7 +28,7 @@ public class WanderController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         lastPos = transform.position;
-        entity.wanderRange = -1;
+        wanderRange = -1;
         wanderOrigin = transform.position;
     }
 
@@ -36,7 +36,7 @@ public class WanderController : MonoBehaviour
     {
         travelDist = Vector2.Distance(transform.position, lastPos);
 
-        if (travelDist >= entity.wanderRange || rb.velocity.magnitude < 0.01f)
+        if (travelDist >= wanderRange || rb.velocity.magnitude < 0.01f)
         {
             rb.velocity = Vector2.zero;
 
@@ -46,7 +46,7 @@ public class WanderController : MonoBehaviour
 
                 if (p <= entity.wanderProbability)
                 {
-                    entity.wanderRange = Random.Range(entity.wanderRangeMin, entity.wanderRangeMax);
+                    wanderRange = Random.Range(entity.wanderRangeMin, entity.wanderRangeMax);
                     velocity = pickDirection();
                     lastPos = this.transform.position;
                     wanderFrequencyAC = 0;
@@ -66,7 +66,7 @@ public class WanderController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (travelDist <= entity.wanderRange) rb.velocity = velocity * entity.wanderSpeed;
+        if (travelDist <= wanderRange) rb.velocity = velocity * entity.wanderSpeed;
     }
 
     private Vector2 pickDirection()
@@ -83,7 +83,7 @@ public class WanderController : MonoBehaviour
 
             //float dist = Vector2.Distance(wanderOrigin, (Vector2)transform.position + dir*wanderRange);
 
-            Vector2 newPos = (Vector2)transform.position + dir * entity.wanderRange;
+            Vector2 newPos = (Vector2)transform.position + dir * wanderRange;
             newPos -= wanderOrigin;
             Vector2 polarPos = new Vector2(Mathf.Sqrt(Mathf.Pow(newPos.x, 2) + Mathf.Pow(newPos.y, 2)), Mathf.Atan(newPos.y / newPos.x));
 
