@@ -11,7 +11,7 @@ public class PlayerControllerScript : MonoBehaviour
     private List<Cow> cows;
     private Rigidbody2D rb;
     private Vector2 velocity;
-
+    private SoundManager sm;
 
     void Start()
     {
@@ -36,6 +36,7 @@ public class PlayerControllerScript : MonoBehaviour
         {
             gallop= false;
         }
+        
     }
 
     private void FixedUpdate()
