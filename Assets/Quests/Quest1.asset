@@ -15,4 +15,5 @@ MonoBehaviour:
   name: Collect Farts
   timeLimit: 360
   questActive: 1
+  text: 
   requiredCows: 02000000020000000200000002000000

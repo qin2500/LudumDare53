@@ -43,5 +43,10 @@ public class PauseScript : MonoBehaviour
         GameIsPause = false;
     }
 
+    public bool getStatus()
+    {
+        return GameIsPause;
+    }
+
 
 }

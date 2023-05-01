@@ -17,6 +17,7 @@ public class QuestManager : MonoBehaviour
     void Start()
     {
         passedTime = 0;
+        questDisplay.questPanel.SetActive(false);
         visibleQuests = new List<Quest>();
         playerControllerScript = player.GetComponent<PlayerControllerScript>();
     }
@@ -24,7 +25,7 @@ public class QuestManager : MonoBehaviour
     void Update()
     {
         passedTime += Time.deltaTime;
-        if (playerInteraction.getColliding() && Input.GetKeyDown(KeyCode.E)){
+        if (questDisplay.open == false && playerInteraction.getColliding() && Input.GetKeyDown(KeyCode.E)){
             questDisplay.Display();
         }
         if (passedTime > deltaTime)
