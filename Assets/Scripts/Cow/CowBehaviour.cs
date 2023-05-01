@@ -10,7 +10,7 @@ public class CowBehaviour : MonoBehaviour
 
     public GameObject bindingCircle;
     public GameObject bindingProgressUI;
-    
+    public GameObject bindingRange;
 
     private WanderController wanderController;
     private ScaredBehaviour scaredBehaviour;
@@ -59,20 +59,12 @@ public class CowBehaviour : MonoBehaviour
         {
             cowHit.player = player;
             steer.player = player;
-
         }
-
-        Debug.Log(currentState);
 
         if (currentState.Equals("Hit"))
         {
-            float scale = (float) (cowHit.timeToLassoAC / cowHit.timeToLasso * 1.7);
-
-            Debug.Log(scale + ": " + cowHit.timeToLassoAC + ", " + cowHit.timeToLasso);
-
-            Vector2 scaleVector = new Vector2(scale, scale);
-
-            bindingProgressUI.transform.localScale = scaleVector;
+            float scale = (float) (cowHit.timeToLassoAC / cowHit.timeToLasso * (cowHit.lassoRadius / 2.3529f));
+            bindingProgressUI.transform.localScale = new Vector2(scale, scale);
         }
     }
 
@@ -112,6 +104,10 @@ public class CowBehaviour : MonoBehaviour
         cowHit.player = player;
         Invoke("setLassoedStatePlayer", 0.05f);
         bindingCircle.SetActive(true);
+
+        float scale = cowHit.lassoRadius / 2.3629f;
+        Debug.Log(scale);
+        bindingRange.transform.localScale = new Vector2(scale, scale);
     }
 
     public void scaredState(List<GameObject> p)
