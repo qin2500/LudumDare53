@@ -16,7 +16,7 @@ public class CowBehaviour : MonoBehaviour
     private SteeringAi steer;
     
     public GameObject player;
-    public LassoBavhiour cowHit;
+    public LassoBehaviour cowHit;
     public float followDistance;
 
     public float followSpeed;
@@ -28,7 +28,7 @@ public class CowBehaviour : MonoBehaviour
         scaredBehaviour = GetComponent(typeof(ScaredBehaviour)) as ScaredBehaviour;
         followBehaviour = GetComponent(typeof (FollowBehaviour)) as FollowBehaviour;
         steer = GetComponent<SteeringAi>();
-        cowHit = cowHit.GetComponent<LassoBavhiour>();
+        cowHit = cowHit.GetComponent<LassoBehaviour>();
         steer.followDistance = followDistance;
         
         wanderState();

@@ -528,7 +528,7 @@ Transform:
   m_Children:
   - {fileID: 1401893868}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &663042713
 GameObject:
@@ -4164,50 +4164,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.02663, y: 5.173588}
   m_EdgeRadius: 0
---- !u!1 &1582369850
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1582369852}
-  - component: {fileID: 1582369851}
-  m_Layer: 0
-  m_Name: Grid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!156049354 &1582369851
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582369850}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
---- !u!4 &1582369852
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582369850}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807997813
 GameObject:
   m_ObjectHideFlags: 0
@@ -4310,6 +4266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e92af5983cda154abe77ea57a4af392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showGizmos: 0
   entity: {fileID: 11400000, guid: 86dc5221f1053cb45bce24061a8a063e, type: 2}
   wanderOriginFollowsEntity: 0
 --- !u!50 &1807997817
@@ -4345,7 +4302,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0b616592466274490cd070fd56315a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 
+  state: 0
   cow: {fileID: 11400000, guid: 563cc4ec26838d94fa02b0e552bbcf7e, type: 2}
+  player: {fileID: 1417831554}
+  cowHit: {fileID: 0}
+  followDistance: 0
+  followSpeed: 0
 --- !u!61 &1807997819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4397,6 +4360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1417831554}
+  steer: {fileID: 0}
 --- !u!1 &1878043453
 GameObject:
   m_ObjectHideFlags: 0
@@ -4510,6 +4474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e92af5983cda154abe77ea57a4af392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showGizmos: 0
   entity: {fileID: 11400000, guid: 1a9f7f09009437f4ebef0fd45fcf4f78, type: 2}
   wanderOriginFollowsEntity: 0
 --- !u!50 &1878043458

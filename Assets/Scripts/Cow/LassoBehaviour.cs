@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class LassoBavhiour : MonoBehaviour
+public class LassoBehaviour : MonoBehaviour
 {
-
     public GameObject player;
     public GameObject fart;   
+
     public float fartFrequency;
     public float lassoedSpeed;
     public float timeToLasso;
