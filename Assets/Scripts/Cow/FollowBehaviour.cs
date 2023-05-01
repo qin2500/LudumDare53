@@ -3,15 +3,18 @@ using UnityEngine;
 public class FollowBehaviour : MonoBehaviour
 {
     public GameObject player;
+    public SteeringAi steer;
     private Rigidbody2D rb;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        steer= GetComponent<SteeringAi>();
+        steer.enabled= true;
+        steer.flee = false;
     }
 
     void Update()
     {
-        rb.velocity = player.GetComponent<Rigidbody2D>().velocity;
+        //rb.velocity = player.GetComponent<Rigidbody2D>().velocity;
     }
 }

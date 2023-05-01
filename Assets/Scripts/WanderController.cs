@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WanderController : MonoBehaviour
 {
+    public bool showGizmos;
     public WanderingEntity entity;
 
     private float wanderAreaStartDegree;
@@ -18,6 +19,11 @@ public class WanderController : MonoBehaviour
 
     private float travelDist;
 
+    private void OnEnable()
+    {
+        wonderOrigin = transform.position;
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,7 +36,7 @@ public class WanderController : MonoBehaviour
     {
         travelDist = Vector2.Distance(transform.position, lastPos);
 
-        if (travelDist >= entity.wanderRange)
+        if (travelDist >= wonderRange || rb.velocity.magnitude < 0.01f)
         {
             rb.velocity = Vector2.zero;
 
@@ -83,41 +89,45 @@ public class WanderController : MonoBehaviour
 
             //if (polarPos.y < 0) polarPos.y += 2 * Mathf.PI;
 
-            //Debug.Log(polarPos.y);
-            if (polarPos.x < entity.wanderAreaRadius) return dir;
+            if (polarPos.x < wonderAreaRadius) return dir;
 
             //if (dist < wanderAreaRadius) return dir;
 
             timeac += Time.deltaTime;
-            if (timeac > 2) return Vector2.up;
+            if (timeac > 2) return ((Vector2)transform.position - wonderOrigin).normalized;
         }
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(this.transform.position, entity.wanderRangeMin);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(this.transform.position, entity.wanderRangeMax);
-        Gizmos.color = Color.green;
-
-        if (wanderOrigin != Vector2.zero)
+        if (showGizmos)
         {
-            Gizmos.DrawWireSphere(wanderOrigin, entity.wanderAreaRadius);
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(this.transform.position, wonderRangeMin);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(this.transform.position, wonderRangeMax);
+            Gizmos.color = Color.green;
 
-            Gizmos.color = Color.yellow;
+            if (wonderOrigin != Vector2.zero)
+            {
+                Gizmos.DrawWireSphere(wonderOrigin, wonderAreaRadius);
 
-            Vector2 direction = new Vector2(Mathf.Cos(wanderAreaStartDegree), Mathf.Sin(wanderAreaStartDegree));
-            direction *= entity.wanderAreaRadius;
-            direction += wanderOrigin;
+                Gizmos.color = Color.yellow;
 
-            Gizmos.DrawLine(wanderOrigin, direction);
+                Vector2 direction = new Vector2(Mathf.Cos(wonderAreaStartDegree), Mathf.Sin(wonderAreaStartDegree));
+                direction *= wonderAreaRadius;
+                direction += wonderOrigin;
+            
+                Gizmos.DrawLine(wonderOrigin, direction);
 
-            direction = new Vector2(Mathf.Cos(wanderAreaEndDegree), Mathf.Sin(wanderAreaEndDegree));
-            direction *= entity.wanderAreaRadius;
-            direction += wanderOrigin;
-
-            Gizmos.DrawLine(wanderOrigin, direction);
+                direction = new Vector2(Mathf.Cos(wonderAreaEndDegree), Mathf.Sin(wonderAreaEndDegree));
+                direction *= wonderAreaRadius;
+                direction += wonderOrigin;
+            
+                Gizmos.DrawLine(wonderOrigin, direction);
+            }
+            else Gizmos.DrawWireSphere(transform.position, wonderAreaRadius);
         }
+        
     }
 }

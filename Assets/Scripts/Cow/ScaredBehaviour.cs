@@ -35,4 +35,11 @@ public class ScaredBehaviour : MonoBehaviour
 
         return ( endPos, fleeSpeed );
     }
+
+    public void runWay(float speed)
+    {
+        GetComponent<SteeringAi>().enabled = true;
+        GetComponent<SteeringAi>().speed = speed;
+
+    }
 }

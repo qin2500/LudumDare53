@@ -12,6 +12,7 @@ public class PlayerControllerScript : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 velocity;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
