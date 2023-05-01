@@ -11,7 +11,7 @@ public class SeekBehaviour : SteeringBehaviour
     [SerializeField]
     private bool showGizmo = true;
 
-    bool reachedLastTarget = true;
+    public bool reachedLastTarget = true;
 
     //gizmo parameters
     private Vector2 targetPositionCached;

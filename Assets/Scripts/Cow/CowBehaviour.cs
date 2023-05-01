@@ -1,39 +1,43 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CowBehaviour : MonoBehaviour
 {
     public string currentState;
-    public int state;
-    public Cow cow;
     
-    private Rigidbody2D rb;
+
     private WanderController wanderController;
     private ScaredBehaviour scaredBehaviour;
-    private FollowBehaviour followBehaviour;
     private SteeringAi steer;
-    
+
     public GameObject player;
     public LassoBehaviour cowHit;
     public float followDistance;
+
+    public LayerMask scary;
+    public float scaredRadius;
+    public float scareUpdateFrequency;
+    public float scareSpeed;
 
     public float followSpeed;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         wanderController = GetComponent(typeof(WanderController)) as WanderController;
         scaredBehaviour = GetComponent(typeof(ScaredBehaviour)) as ScaredBehaviour;
         steer = GetComponent<SteeringAi>();
-        cowHit = cowHit.GetComponent<LassoBehaviour>();
+        cowHit = GetComponent<LassoBehaviour>();
         steer.followDistance = followDistance;
         
         wanderState();
 
         wanderController.enabled = true;
         scaredBehaviour.enabled = false;
+
+        InvokeRepeating("spooky", 0, scareUpdateFrequency);
     }
     
     private void Update()
@@ -42,46 +46,13 @@ public class CowBehaviour : MonoBehaviour
         {
             cowHit.player = player;
             steer.player = player;
-        }
-        //if (hit)
-        //{
-        //    cowHit.enabled = true;
-        //    cowHit.player = player;
-        //    wanderController.enabled = false;
-        //    scaredBehaviour.enabled = false;
-        //    steer.flee = true;
-        //    return;
-        //}
-        //else
-        //{
-        //    cowHit.enabled = false;
-        //    steer.enabled = false;
-        //}
-        //if(lassoed && !scared)
-        //{
-        //    steer.enabled = true;
-        //    steer.flee = false;
-        //    steer.speed = followSpeed;
-        //    wanderController.enabled = false;
-        //}
-        //if (scared)
-        //{
-        //    followBehaviour.enabled = false;
-        //    wanderController.enabled = false;
-        //    scaredBehaviour.enabled = true;
-        //}
-        //if (!lassoed && !scared)
-        //{
-        //    followBehaviour.enabled = false;
-        //    wanderController.enabled = true;
-        //    scaredBehaviour.enabled = false;
-        //    steer.enabled = false;
-        //}
+        }        
     }
 
     public void wanderState()
     {
         currentState = "Wander";
+        scaredBehaviour.returnState = currentState;
         wanderController.enabled = true;
         scaredBehaviour.enabled = false;
         steer.enabled = false;
@@ -91,6 +62,7 @@ public class CowBehaviour : MonoBehaviour
     public void followState()
     {
         currentState = "Lassoed";
+        scaredBehaviour.returnState = currentState;
         wanderController.enabled = false;
         scaredBehaviour.enabled = false;
         steer.enabled = true;
@@ -112,11 +84,14 @@ public class CowBehaviour : MonoBehaviour
         Invoke("setLassoedStatePlayer", 0.05f);
     }
 
-    public void scaredState()
+    public void scaredState(List<GameObject> p)
     {
         currentState = "Scared";
         wanderController.enabled = false;
         scaredBehaviour.enabled = true;
+        scaredBehaviour.scary = p;
+        
+        scaredBehaviour.scareSpeed = scareSpeed;
         steer.enabled = false;
         cowHit.enabled = false;
     }
@@ -124,5 +99,20 @@ public class CowBehaviour : MonoBehaviour
     public void setLassoedStatePlayer()
     {
         cowHit.player = player;
+    }
+
+    public void spooky()
+    {
+        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, scaredRadius, scary);
+        if(collider.Length > 0)
+        {
+            List<GameObject> poo = new List<GameObject>();
+            for(int i=0; i<collider.Length; i++)
+            {
+                poo.Add(collider[i].gameObject);
+            }
+            scaredState(poo);
+        }
+        
     }
 }

@@ -9,8 +9,9 @@ public class SteeringAi : MonoBehaviour
     public bool flee;
     public float speed;
     public float followDistance;
-    public GameObject fleeObject;
+    public List<GameObject> fleeObjects;
     public float fleeDistance;
+    public SeekBehaviour steeringScript;
     [HideInInspector]
     public GameObject player;
     [SerializeField]
@@ -32,12 +33,13 @@ public class SteeringAi : MonoBehaviour
     private ContextSolver movementDirectionSolver;
 
     bool following = false;
-
+    public GameObject dummy;
     private void Start()
     {
         //Detecting Player and Obstacles around
         InvokeRepeating("PerformDetection", 0, detectionDelay);
         rb = GetComponent<Rigidbody2D>();   
+       
     }
 
     private void PerformDetection()
@@ -50,7 +52,13 @@ public class SteeringAi : MonoBehaviour
 
     private void Update()
     {
-        if(fleeObject)aiData.currentTarget = fleeObject.transform;
+        if(fleeObjects.Count > 0 )
+        {
+            Vector2 average = averagePosition();
+            dummy.transform.position = average;
+            dummy.layer = 7;
+            aiData.currentTarget = dummy.transform;
+        }
         if (aiData.currentTarget != null)
         {
             if (following == false)
@@ -65,8 +73,8 @@ public class SteeringAi : MonoBehaviour
         }
         if(flee)
         {
-            if(fleeObject && Vector2.Distance(transform.position, aiData.currentTarget.transform.position) < fleeDistance) rb.velocity = movementInput.normalized * speed;
-            else if(Vector2.Distance(transform.position, player.transform.position) < fleeDistance) rb.velocity = movementInput.normalized * speed;
+            if ((fleeObjects.Count > 0) && Vector2.Distance(transform.position, aiData.currentTarget.transform.position) < fleeDistance) rb.velocity = movementInput.normalized * speed;
+            else if (Vector2.Distance(transform.position, player.transform.position) < fleeDistance) rb.velocity = movementInput.normalized * speed;
         }
         else
         {
@@ -77,6 +85,7 @@ public class SteeringAi : MonoBehaviour
             }
         }
         
+
     }
     private IEnumerator ChaseAndAttack()
     {
@@ -97,5 +106,17 @@ public class SteeringAi : MonoBehaviour
 
         }
 
+    }
+
+    public Vector2 averagePosition()
+    {
+        Vector2 average = Vector2.zero;
+        int count = 0;
+        foreach(GameObject g in fleeObjects)
+        {
+            average += (Vector2)g.transform.position; 
+            count++;
+        }
+        return average * (1 / count);
     }
 }

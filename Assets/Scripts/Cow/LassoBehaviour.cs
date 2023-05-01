@@ -30,10 +30,10 @@ public class LassoBehaviour : MonoBehaviour
     void Update()
     {
         float dist = Vector2.Distance(transform.position, player.transform.position);
-        
-        if(dist <= lassoRadius)
+
+        if (dist <= lassoRadius)
         {
-            if(timeToLassoAC + Time.deltaTime >= timeToLasso)
+            if (timeToLassoAC + Time.deltaTime >= timeToLasso)
             {
                 Debug.Log(timeToLassoAC);
                 Debug.Log("Lassoed!!!");
@@ -45,6 +45,7 @@ public class LassoBehaviour : MonoBehaviour
                 timeToLassoAC += Time.deltaTime;
             }
         }
+        else timeToLassoAC = 0;
     }
 
     private void OnDrawGizmosSelected()
