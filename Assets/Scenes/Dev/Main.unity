@@ -12859,9 +12859,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questManager: {fileID: 1577175778}
-  questPanelPrefab: {fileID: 1176237308726558584, guid: b73c93ae2c3706a4ca9481d5d4305c68, type: 3}
+  questPanelPrefab: {fileID: 3790801542741968008, guid: b73c93ae2c3706a4ca9481d5d4305c68, type: 3}
   contentPanel: {fileID: 1476570046}
-  questPanel: {fileID: 1955871013}
+  questPanel: {fileID: 1476570045}
   open: 0
 --- !u!114 &1955871016
 MonoBehaviour:

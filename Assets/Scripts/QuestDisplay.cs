@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,25 +21,32 @@ public class QuestDisplay : MonoBehaviour
     {
         open = true;
         questPanel.SetActive(open);
-        
+        quests = new List<Quest>();
         quests = questManager.getActiveQuests();
+
         questPanelList = new List<GameObject>();
-        foreach (Quest quest in quests)
+        Debug.Log("quests count display: " + quests.Count);
+
+        if (quests.Count > 0)
         {
-            GameObject questPanel = Instantiate(questPanelPrefab) as GameObject;
-            questPanelList.Add(questPanel);
-            questPanel.transform.SetParent(contentPanel);
+            foreach (Quest quest in quests)
+            {
+                GameObject questPanel = Instantiate(questPanelPrefab) as GameObject;
+                questPanelList.Add(questPanel);
+                questPanel.transform.SetParent(contentPanel);
 
 
-            // Set panel's title and description to quest's properties 
-            questPanel.transform.Find("Title").GetComponent<TMPro.TextMeshProUGUI>().text = quest.name;
-            questPanel.transform.Find("Description").GetComponent<TMPro.TextMeshProUGUI>().text = quest.text;
+                // Set panel's title and description to quest's properties 
+                questPanel.transform.Find("Title").GetComponent<TextMeshPro>().text = quest.name;
+                questPanel.transform.Find("Description").GetComponent<TextMeshPro>().text = quest.text;
 
-            // Add onClick listener to accept button
-            Button acceptButton = questPanel.transform.Find("AcceptButton").GetComponent<Button>();
-            acceptButton.onClick.AddListener(delegate { AcceptQuest(quest, questPanel); });
-            
+                // Add onClick listener to accept button
+                Button acceptButton = questPanel.transform.Find("AcceptButton").GetComponent<Button>();
+                acceptButton.onClick.AddListener(delegate { this.AcceptQuest(quest, questPanel); });
+
+            }
         }
+
         
     }
 
