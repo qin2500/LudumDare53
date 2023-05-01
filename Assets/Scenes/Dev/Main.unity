@@ -318,7 +318,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &64739045
 GameObject:
@@ -466,7 +466,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &72656581
 GameObject:
@@ -973,7 +973,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 64739045}
   interactionPrompt: {fileID: 1467100875}
-  Panel: {fileID: 0}
 --- !u!61 &133516236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1015,7 +1014,7 @@ Transform:
   - {fileID: 1467100877}
   - {fileID: 1289258773}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &134814229
 GameObject:
@@ -1166,7 +1165,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &211062323
 GameObject:
@@ -1329,7 +1328,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &215435234
 GameObject:
@@ -1660,7 +1659,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1577175777}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &350971136
 SpriteRenderer:
@@ -2164,7 +2163,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1577175777}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &561876622
 GameObject:
@@ -2838,7 +2837,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &777877071
 GameObject:
@@ -7897,7 +7896,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &854300189
 GameObject:
@@ -8006,6 +8005,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 64739045}
   client: {fileID: 3407488283631044866, guid: 1dac3cd4cfca2cc408e4487be6f50da1, type: 3}
+  playerInteraction: {fileID: 0}
+  questDisplay: {fileID: 0}
   possibleQuests:
   - {fileID: 0}
   - {fileID: 0}
@@ -8023,7 +8024,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906312754
 GameObject:
@@ -11447,14 +11448,14 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: UpdateMixerVolume
-        m_Mode: 1
+      - m_Target: {fileID: 1583482681}
+        m_TargetAssemblyTypeName: VolumeSlider, Assembly-CSharp
+        m_MethodName: OnSFXSliderValueChange
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11677,8 +11678,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 215435235}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1577175777}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12213,7 +12214,7 @@ GameObject:
   - component: {fileID: 1577175777}
   - component: {fileID: 1577175776}
   - component: {fileID: 1577175775}
-  - component: {fileID: 1577175774}
+  - component: {fileID: 1577175778}
   m_Layer: 0
   m_Name: Mailbox
   m_TagString: Untagged
@@ -12221,24 +12222,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &1577175774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577175773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3320bde579fb374d8e20d27c99868ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 64739045}
-  client: {fileID: 3407488283631044866, guid: 1dac3cd4cfca2cc408e4487be6f50da1, type: 3}
-  possibleQuests:
-  - {fileID: 11400000, guid: a821ea27e828f4548b81791e4979bb33, type: 2}
-  - {fileID: 11400000, guid: 952dd740591c4cf4e855e504cdcd70fd, type: 2}
-  - {fileID: 11400000, guid: 40cffd62bbc4fd746802ad5401400890, type: 2}
 --- !u!114 &1577175775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12253,7 +12236,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 64739045}
   interactionPrompt: {fileID: 467667491}
-  Panel: {fileID: 215435234}
 --- !u!61 &1577175776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12292,11 +12274,30 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1300761882}
   - {fileID: 467667493}
   - {fileID: 350971135}
+  - {fileID: 1586958978}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577175778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577175773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3320bde579fb374d8e20d27c99868ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 64739045}
+  client: {fileID: 3407488283631044866, guid: 1dac3cd4cfca2cc408e4487be6f50da1, type: 3}
+  playerInteraction: {fileID: 0}
+  questDisplay: {fileID: 0}
+  possibleQuests: []
 --- !u!1 &1583482678
 GameObject:
   m_ObjectHideFlags: 0
@@ -12307,6 +12308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583482680}
   - component: {fileID: 1583482679}
+  - component: {fileID: 1583482681}
   m_Layer: 0
   m_Name: Sound Manager
   m_TagString: Untagged
@@ -12326,6 +12328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f339613cf063cc46bcbf4e2deef60ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds: []
   musicMixerGroup: {fileID: -5788932174563419685, guid: 7f00f13e72349b243ae6be6d5955eca3, type: 2}
   SFXMixerGroup: {fileID: -4150704646346482154, guid: 7f00f13e72349b243ae6be6d5955eca3, type: 2}
 --- !u!4 &1583482680
@@ -12343,6 +12346,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1583482681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583482678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a418c60b636c0418c334f018a8a29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSliderText: {fileID: 0}
+  SFXSliderText: {fileID: 0}
+--- !u!1 &1586958977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586958978}
+  - component: {fileID: 1586958979}
+  m_Layer: 0
+  m_Name: QuestObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1586958978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586958977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1577175777}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1586958979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586958977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3255e388be55df4598e161094c5cd3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questPanel: {fileID: 215435234}
+  questText: {fileID: 0}
+  questManager: {fileID: 1577175778}
 --- !u!1 &1600225894
 GameObject:
   m_ObjectHideFlags: 0
@@ -12430,7 +12494,6 @@ GameObject:
   - component: {fileID: 1609993417}
   - component: {fileID: 1609993419}
   - component: {fileID: 1609993418}
-  - component: {fileID: 1609993420}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -12478,15 +12541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'quest text
-
-    aaa
-
-    a
-
-    aaa
-
-    aaaa'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12563,21 +12618,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609993416}
   m_CullTransparentMesh: 1
---- !u!114 &1609993420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609993416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3320bde579fb374d8e20d27c99868ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 64739045}
-  client: {fileID: 3407488283631044866, guid: 1dac3cd4cfca2cc408e4487be6f50da1, type: 3}
-  possibleQuests: []
 --- !u!1 &1690266152
 GameObject:
   m_ObjectHideFlags: 0
@@ -13041,7 +13081,7 @@ Transform:
   m_Children:
   - {fileID: 907602380}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1842727439
 GameObject:
@@ -13244,7 +13284,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880807271
 GameObject:
@@ -13279,7 +13319,7 @@ Transform:
   - {fileID: 312145858}
   - {fileID: 978781103}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2024391751
 GameObject:
@@ -13505,14 +13545,14 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: UpdateMixerVolume
-        m_Mode: 1
+      - m_Target: {fileID: 1583482681}
+        m_TargetAssemblyTypeName: VolumeSlider, Assembly-CSharp
+        m_MethodName: OnMusicSliderValueChange
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

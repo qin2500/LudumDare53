@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class VolumeSlider
+public class VolumeSlider:MonoBehaviour
 {
 
     public static float musicVolume {get; private set;}

@@ -5,14 +5,15 @@ public class QuestManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject client;
-
+    public QuestDisplay questDisplay;
+    public PlayerInteraction playerInteraction;
     private float passedTime;
     private float deltaTime = 2;
 
     public Quest[] possibleQuests;
     private PlayerControllerScript playerControllerScript;
     private List<Quest> visibleQuests;
-
+    
     void Start()
     {
         passedTime = 0;
@@ -23,7 +24,9 @@ public class QuestManager : MonoBehaviour
     void Update()
     {
         passedTime += Time.deltaTime;
-
+        if (playerInteraction.getColliding() && Input.GetKeyDown(KeyCode.E)){
+            questDisplay.Display();
+        }
         if (passedTime > deltaTime)
         {
             deltaTime = Random.Range(200, 400);
