@@ -15,6 +15,7 @@ public class RopeController : MonoBehaviour
     void Start()
     {
         lr = GetComponent<LineRenderer>();
+        cow.GetComponent<LassoBehaviour>().rope = this.gameObject;
     }
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public class RopeController : MonoBehaviour
             breakRope();
 
         }
+
     }
 
     public void breakRope()
