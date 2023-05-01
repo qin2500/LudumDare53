@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba09dc5c44435114380227626f0d14db, type: 3}
-  m_Name: StandardWander
+  m_Name: LimeWander
   m_EditorClassIdentifier: 
   wanderAreaRadius: 27
-  wanderFrequency: 4
-  wanderProbability: 0.9
-  wanderRangeMax: 10
-  wanderRangeMin: 5
-  wanderSpeed: 10
+  wanderFrequency: 1
+  wanderProbability: 0.7
+  wanderRangeMax: 6
+  wanderRangeMin: 4
+  wanderSpeed: 14
