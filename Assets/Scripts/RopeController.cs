@@ -33,11 +33,13 @@ public class RopeController : MonoBehaviour
             cow.GetComponent<CowBehaviour>().wanderState();
             cow.tag = "Cow";
             distroy();
+
         }
     }
 
-    public void distroy()
+    public void destroy()
     {
+        player.GetComponent<PlayerControllerScript>().removeCow(GetComponent<Cow>());
         Destroy(this.gameObject);
     }
 }
