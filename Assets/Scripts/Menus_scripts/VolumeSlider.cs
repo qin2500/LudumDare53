@@ -10,7 +10,7 @@ public class VolumeSlider
     [SerializeField] private TextMeshProUGUI musicSliderText;
     [SerializeField] private TextMeshProUGUI SFXSliderText;
 
-
+    
     public void OnMusicSliderValueChange(float value){
         musicVolume = value;
         musicSliderText.text = ((int) (value * 100)).ToString();

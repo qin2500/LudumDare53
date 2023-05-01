@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private Sound[] sounds;
     [SerializeField] private AudioMixerGroup musicMixerGroup;
     [SerializeField] private AudioMixerGroup SFXMixerGroup;
-
+    
     void Awake()
     {
         Instance = this;
@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour
     {
        musicMixerGroup.audioMixer.SetFloat("Music vol", Mathf.Log10(VolumeSlider.musicVolume)*20);
        SFXMixerGroup.audioMixer.SetFloat("SFX vol", Mathf.Log10(VolumeSlider.SFXVolume)*20);
-
+        
     }
 
 }
