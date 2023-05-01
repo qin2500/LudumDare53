@@ -785,6 +785,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e92af5983cda154abe77ea57a4af392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4012038702045188650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a1d3a7a1ae6894a849206878b5912b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  steer: {fileID: 0}
+--- !u!114 &4012038702045188641
+=======
   showGizmos: 1
   entity: {fileID: 11400000, guid: f6d1433cff82a684c8a7057945666181, type: 2}
   wanderOriginFollowsEntity: 0
@@ -906,6 +921,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   m_GameObject: {fileID: 5474604860735603163}
   m_Enabled: 1
   m_EditorHideFlags: 0

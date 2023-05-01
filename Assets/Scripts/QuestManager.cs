@@ -5,6 +5,7 @@ public class QuestManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject client;
+    public EntitiesManager entitiesManager;
     public QuestDisplay questDisplay;
     public PlayerInteraction playerInteraction;
     private float passedTime;
@@ -35,7 +36,8 @@ public class QuestManager : MonoBehaviour
             Quest newQuest = possibleQuests[Random.Range(0, possibleQuests.Length)];
             Debug.Log(newQuest.name + " init");
             visibleQuests.Add(newQuest);
-
+            
+            entitiesManager.addQuestCows(newQuest.requiredCows);
         }
 
         foreach (Quest quest in visibleQuests)
@@ -64,9 +66,9 @@ public class QuestManager : MonoBehaviour
         Debug.Log(quest.name + " : sucess: " + sucess);
         visibleQuests.Remove(quest);
         quest.questActive = false;
-    }
 
-    
+        entitiesManager.removeQuestCows(quest.requiredCows, sucess);
+    }
 
     public List<Quest> getActiveQuests()
     {   
