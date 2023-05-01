@@ -46,8 +46,6 @@ public class QuestDisplay : MonoBehaviour
 
             }
         }
-
-        
     }
 
     public void close_panel() {
@@ -55,7 +53,6 @@ public class QuestDisplay : MonoBehaviour
         questPanel.SetActive(open);
         
         foreach (GameObject q in questPanelList) {
-
             Destroy(q);
         }
         questPanelList.Clear();

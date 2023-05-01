@@ -28,15 +28,14 @@ public class QuestManager : MonoBehaviour
         if (questDisplay.open == false && playerInteraction.getColliding() && Input.GetKeyDown(KeyCode.E)){
             questDisplay.Display();
         }
-        if (passedTime > deltaTime)
+        if (passedTime > deltaTime && visibleQuests.Count <= 5)
         {
             deltaTime = Random.Range(200, 400);
             passedTime = 0;
-
             Quest newQuest = possibleQuests[Random.Range(0, possibleQuests.Length)];
             Debug.Log(newQuest.name + " init");
             visibleQuests.Add(newQuest);
-            acceptQuest(newQuest);
+
         }
 
         foreach (Quest quest in visibleQuests)
@@ -56,18 +55,20 @@ public class QuestManager : MonoBehaviour
     public void acceptQuest(Quest quest)
     {
         quest.startQuest();
-
         ClientController temp = (ClientController) Instantiate(client).GetComponent<ClientController>();
         temp.setQuestManager(this);
     }
     public void concludeQuest(Quest quest, bool sucess)
     {
         Debug.Log(quest.name + " : sucess: " + sucess);
+        visibleQuests.Remove(quest);
         quest.questActive = false;
     }
 
+    
+
     public List<Quest> getActiveQuests()
-    {
+    {   
         return visibleQuests;
     }
 }
