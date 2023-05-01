@@ -8,11 +8,16 @@ public class ScaredBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
     private CowBehaviour cowBehaviour;
+    public SteeringAi steer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cowBehaviour = GetComponent<CowBehaviour>();
+
+        steer = GetComponent<SteeringAi>();
+        steer.enabled = true;
+        steer.flee = false;
     }
 
     // Update is called once per frame

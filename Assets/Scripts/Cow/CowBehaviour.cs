@@ -7,6 +7,8 @@ public class CowBehaviour : MonoBehaviour
 {
     public string currentState;
     public int state;
+    public GameObject bindingCircle;
+    public GameObject bindingProgressUI;
     public Cow cow;
     
     private Rigidbody2D rb;
@@ -29,7 +31,7 @@ public class CowBehaviour : MonoBehaviour
         steer = GetComponent<SteeringAi>();
         cowHit = cowHit.GetComponent<LassoBehaviour>();
         steer.followDistance = followDistance;
-        
+
         wanderState();
 
         wanderController.enabled = true;
@@ -43,6 +45,18 @@ public class CowBehaviour : MonoBehaviour
             cowHit.player = player;
             steer.player = player;
         }
+
+        if (currentState.Equals("Hit"))
+        {
+/*            GameObject progressUI = chargingCircle.transform.Find("binding-progress").GetComponent<GameObject>();
+*/
+            float scale = (float) (cowHit.timeToLassoAC / cowHit.timeToLasso * 0.9);
+            /*Debug.Log(scale + ": " + cowHit.timeToLassoAC + ", " + cowHit.timeToLasso);*/
+            Vector2 scaleVector = new Vector2(scale, scale);
+
+            bindingProgressUI.transform.localScale = scaleVector;
+        }
+
         //if (hit)
         //{
         //    cowHit.enabled = true;
@@ -86,6 +100,7 @@ public class CowBehaviour : MonoBehaviour
         scaredBehaviour.enabled = false;
         steer.enabled = false;
         cowHit.enabled = false;
+        bindingCircle.SetActive(false);
     }
     
     public void followState()
@@ -98,6 +113,7 @@ public class CowBehaviour : MonoBehaviour
         steer.flee = false;
         steer.followDistance = followDistance;
         cowHit.enabled = false;
+        bindingCircle.SetActive(false);
     }
     
     public void hitState()
@@ -110,6 +126,7 @@ public class CowBehaviour : MonoBehaviour
         steer.flee = true;
         cowHit.player = player;
         Invoke("setLassoedStatePlayer", 0.05f);
+        bindingCircle.SetActive(true);
     }
 
     public void scaredState()
@@ -119,6 +136,7 @@ public class CowBehaviour : MonoBehaviour
         scaredBehaviour.enabled = true;
         steer.enabled = false;
         cowHit.enabled = false;
+        bindingCircle.SetActive(false);
     }
 
     public void setLassoedStatePlayer()
