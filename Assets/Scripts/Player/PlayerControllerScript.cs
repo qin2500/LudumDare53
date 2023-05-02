@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerControllerScript : MonoBehaviour
 {
     public float trotSpeed;
     public float gallopSpeed;
+
+    public Animator anim;
 
     private bool gallop;
     private List<Cow> cows;
@@ -36,6 +39,9 @@ public class PlayerControllerScript : MonoBehaviour
         {
             gallop= false;
         }
+
+        if (rb.velocity.magnitude < 0.1) anim.Play("player");
+        else anim.Play("run");
     }
 
     private void FixedUpdate()
