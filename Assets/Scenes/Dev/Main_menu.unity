@@ -919,7 +919,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ranch runner
+  m_text: cow quest
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af73fdc91f25bc04599755652f1edb62, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: af73fdc91f25bc04599755652f1edb62, type: 2}
