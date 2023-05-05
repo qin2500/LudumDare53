@@ -26,7 +26,8 @@ public class QuestManager : MonoBehaviour
     void Update()
     {
         passedTime += Time.deltaTime;
-        if (questDisplay.open == false && playerInteraction.getColliding() && Input.GetKeyDown(KeyCode.E)){
+        if (questDisplay.open == false && playerInteraction.getColliding() && Input.GetKeyDown(KeyCode.E))
+        {
             questDisplay.Display();
         }
         if (passedTime > deltaTime && visibleQuests.Count <= 5)

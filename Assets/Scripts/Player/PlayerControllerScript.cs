@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerControllerScript : MonoBehaviour
 {
     public float trotSpeed;
     public float gallopSpeed;
+
+    public Animator anim;
 
     private bool gallop;
     private List<Cow> cows;
@@ -36,6 +39,9 @@ public class PlayerControllerScript : MonoBehaviour
         {
             gallop= false;
         }
+
+        if (rb.velocity.magnitude < 0.1) anim.Play("player");
+        else anim.Play("run");
     }
 
     private void FixedUpdate()
@@ -63,5 +69,17 @@ public class PlayerControllerScript : MonoBehaviour
     public List<Cow> getCows()
     {
         return cows;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Bullet"))
+        {
+            List<GameObject> ropes = this.transform.GetChild(0).gameObject.GetComponent<PatchLassoController>().ropes;
+            foreach(GameObject gm in ropes)
+            {
+                gm.GetComponent<RopeController>().breakRope();
+            }
+        }
     }
 }

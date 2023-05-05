@@ -15,6 +15,7 @@ public class RopeController : MonoBehaviour
     void Start()
     {
         lr = GetComponent<LineRenderer>();
+        cow.GetComponent<LassoBehaviour>().rope = this.gameObject;
     }
 
     // Update is called once per frame
@@ -29,12 +30,20 @@ public class RopeController : MonoBehaviour
 
         if (Vector2.Distance(player.transform.position, cow.transform.position) > maxDist)
         {
-            player.transform.GetChild(0).GetComponent<PatchLassoController>().ropping = false;
-            cow.GetComponent<CowBehaviour>().wanderState();
-            cow.tag = "Cow";
-            destroy();
+
+            breakRope();
 
         }
+
+    }
+
+    public void breakRope()
+    {
+        player.transform.GetChild(0).GetComponent<PatchLassoController>().ropping = false;
+        cow.GetComponent<CowBehaviour>().wanderState();
+        cow.tag = "Cow";
+        player.GetComponent<PlayerControllerScript>().removeCow(GetComponent<Cow>());
+        destroy();
     }
 
     public void destroy()

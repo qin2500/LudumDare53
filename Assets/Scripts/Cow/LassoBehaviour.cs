@@ -14,7 +14,7 @@ public class LassoBehaviour : MonoBehaviour
     public float lassoedSpeed;
     public float timeToLasso;
     public float lassoRadius;
-
+    public GameObject rope;
 
     private SteeringAi steer;
     public float timeToLassoAC;
@@ -30,7 +30,7 @@ public class LassoBehaviour : MonoBehaviour
     void Update()
     {
         float dist = Vector2.Distance(transform.position, player.transform.position);
-
+        if(Input.GetMouseButtonDown(0)) rope.GetComponent<RopeController>().breakRope();
         if (dist <= lassoRadius)
         {
             if (timeToLassoAC + Time.deltaTime >= timeToLasso)

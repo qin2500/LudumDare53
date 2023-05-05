@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Building
   - Cow
-  - NPC
+  - Bullet
   layers:
   - Default
   - TransparentFX
