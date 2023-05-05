@@ -5,9 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject player;
+    public GameObject sandstorm;
     public new Camera camera;
     public float scalingFactor;
-    // Start is called before the first frame update
+
     void Start()
     {
         camera = Camera.main;
@@ -25,5 +26,10 @@ public class CameraController : MonoBehaviour
         float yPos = (mouseScreenPosition.y - position.y) * scalingFactor;
 
         transform.position = new Vector3(position.x + xPos, position.y + yPos, -10);
+    }
+
+    private void LateUpdate()
+    {
+        sandstorm.transform.parent = Camera.main.transform;
     }
 }

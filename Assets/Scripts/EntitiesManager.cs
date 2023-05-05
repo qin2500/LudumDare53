@@ -10,11 +10,6 @@ public class EntitiesManager : MonoBehaviour
     public int maxNumCows;
     public Cow[] cowPrefabs;
 
-    public float xMin;
-    public float yMin;
-    public float xMax;
-    public float yMax;
-
     private List<Cow> cowEntities;
     private List<Cow> questCows;
     private PlayerControllerScript playerControllerScript;
@@ -80,9 +75,24 @@ public class EntitiesManager : MonoBehaviour
 
     private void spawnCows()
     {
-        for (int i = cowEntities.Count; i < maxNumCows; i++)
+        int tierOne = maxNumCows / 2;
+        int tierTwo = maxNumCows / 3;
+        int tierThree = maxNumCows / 6;
+
+        /*spawnCowsInBox(0, 2, -30, 90, -30, 80, tierOne);
+        spawnCowsInBox(2, 4, -60, 130, -60, 100, tierTwo);
+        spawnCowsInBox(4, 6, -80, 160, -80, 120, tierThree);*/
+
+        spawnCowsInBox(0, 2, 0, 0, 0, 0, tierOne);
+        spawnCowsInBox(2, 4, 90, 90, 0, 0, tierTwo);
+        spawnCowsInBox(4, 6, 180, 180, 0, 0, tierThree);
+    }
+
+    private void spawnCowsInBox(int indexStart, int indexEnd, float xMin, float xMax, float yMin, float yMax, int amount)
+    {
+        for (int i = 0; i < amount; i++)
         {
-            int cowType = Random.Range(0, cowPrefabs.Length);
+            int cowType = Random.Range(indexStart, indexEnd);
             Vector2 location = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
 
             Cow spawn = Instantiate(cowPrefabs[cowType]);
