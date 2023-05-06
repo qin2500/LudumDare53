@@ -40,8 +40,8 @@ public class PlayerControllerScript : MonoBehaviour
             gallop= false;
         }
 
-        if (rb.velocity.magnitude < 0.1) anim.Play("player");
-        else anim.Play("run");
+        /*if (rb.velocity.magnitude < 0.1) anim.Play("player");
+        else anim.Play("run");*/
     }
 
     private void FixedUpdate()

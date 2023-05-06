@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Quest3
   m_EditorClassIdentifier: 
   name: Start Shitting
-  timeLimit: 180
+  timeLimit: 20
   questActive: 0
+  text: 
   requiredCows: 01000000020000000300000004000000
