@@ -605,7 +605,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 12
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -658,7 +658,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 26
+      scalar: 25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -712,7 +712,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.654902, g: 0.34901962, b: 0.15686275, a: 1}
+      maxColor: {r: 0.654902, g: 0.34901962, b: 0.15686275, a: 0.99607843}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1794,8 +1794,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0.5019608}
+        key0: {r: 0.654902, g: 0.34901962, b: 0.15686275, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1803,24 +1803,24 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 11372
-        ctime1: 65150
+        ctime1: 11372
         ctime2: 0
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 10794
-        atime1: 37972
+        atime0: 0
+        atime1: 65535
         atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
-        m_Mode: 0
+        m_Mode: 1
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5826,12 +5826,20 @@ PrefabInstance:
       value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 8290923734207373106, guid: ff4e6386cf891dc48bef4f0d6405d4a6, type: 3}
+      propertyPath: sandstorm
+      value: 
+      objectReference: {fileID: 915050288}
+    - target: {fileID: 8290923734207373106, guid: ff4e6386cf891dc48bef4f0d6405d4a6, type: 3}
       propertyPath: cycleDuration
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8290923734207373107, guid: ff4e6386cf891dc48bef4f0d6405d4a6, type: 3}
       propertyPath: m_Name
       value: Global Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290923734207373107, guid: ff4e6386cf891dc48bef4f0d6405d4a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff4e6386cf891dc48bef4f0d6405d4a6, type: 3}

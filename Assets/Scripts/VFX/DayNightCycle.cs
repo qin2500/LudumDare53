@@ -4,6 +4,7 @@ using UnityEngine;
 public class DayNightCycle : MonoBehaviour
 {
     public Volume volume;
+    public ParticleSystem sandstorm;
     public float cycleDuration;
 
     private float time;
@@ -18,7 +19,15 @@ public class DayNightCycle : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        volume.weight = Mathf.Abs(cycleDuration - time)/cycleDuration*0.65f;
+        float contextualTime = Mathf.Abs(cycleDuration - time) / cycleDuration;
+        var main = sandstorm.main;
+
+        volume.weight = contextualTime*0.65f;
+        main.startSpeed = 16 + contextualTime*(25-16);
+
+        Color temp = main.startColor.color;
+        temp.a = contextualTime;
+        main.startColor = temp;
 
         if (time >= 2*cycleDuration)
         {

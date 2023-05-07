@@ -98,8 +98,6 @@ public class EntitiesManager : MonoBehaviour
 
     private void spawnCowsInBox(int indexStart, int indexEnd, float xMin, float xMax, float yMin, float yMax, int amount)
     {
-        Debug.Log("called with: " + amount);
-
         if (amount == 0) return;
 
         for (int i = 0; i < amount; i++)
