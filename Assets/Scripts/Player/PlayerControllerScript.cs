@@ -14,7 +14,7 @@ public class PlayerControllerScript : MonoBehaviour
     private List<Cow> cows;
     private Rigidbody2D rb;
     private Vector2 velocity;
-
+    private bool faceRight = true;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class PlayerControllerScript : MonoBehaviour
         cows = new List<Cow>();
     }
 
-    void Update()
+    private void Update()
     {
         var inputH = Input.GetAxisRaw("Horizontal");
         var inputV = Input.GetAxisRaw("Vertical");
@@ -32,7 +32,26 @@ public class PlayerControllerScript : MonoBehaviour
 
         velocity.Normalize();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+        if (inputH > 0 && !faceRight)
+        {
+            flipSprite();
+        }
+        if (inputH < 0 && faceRight)
+        {
+            flipSprite();
+        }
+
+        if (!gallop)
+        {
+            rb.velocity = velocity * trotSpeed;
+        }
+        else
+        {
+            rb.velocity = velocity * gallopSpeed;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
             gallop = true;
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -42,19 +61,6 @@ public class PlayerControllerScript : MonoBehaviour
 
         animator.SetFloat("speed", rb.velocity.magnitude);
         animator.SetBool("galloping", gallop);
-        /*animator.SetBool("lassoing", );*/
-    }
-
-    private void FixedUpdate()
-    {
-        if (!gallop)
-        {
-            rb.velocity = velocity * trotSpeed;
-        }
-        else
-        {
-            rb.velocity = velocity * gallopSpeed;
-        }
     }
 
     public void addCow(Cow cow)
@@ -70,6 +76,16 @@ public class PlayerControllerScript : MonoBehaviour
     public List<Cow> getCows()
     {
         return cows;
+    }
+
+    private void flipSprite()
+    {
+        faceRight = !faceRight;
+
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+
+        transform.localScale = scale;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

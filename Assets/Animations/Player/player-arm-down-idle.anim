@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: player-arm-up-trot
+  m_Name: player-arm-down-idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,15 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 762593107, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
-    - time: 0.15
-      value: {fileID: -810491444, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
-    - time: 0.36666667
-      value: {fileID: 2139793728, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
-    - time: 0.56666666
-      value: {fileID: -298577241, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
-    - time: 0.75
-      value: {fileID: 762593107, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
+      value: {fileID: -991546519, guid: 8df086461d057ed4086e34a9544b176b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,17 +40,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 762593107, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
-    - {fileID: -810491444, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
-    - {fileID: 2139793728, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
-    - {fileID: -298577241, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
-    - {fileID: 762593107, guid: a3dd56c7acb076a48aa46cece999fc4f, type: 3}
+    - {fileID: -991546519, guid: 8df086461d057ed4086e34a9544b176b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.76666665
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
