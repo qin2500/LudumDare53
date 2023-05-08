@@ -8,7 +8,7 @@ public class PlayerControllerScript : MonoBehaviour
     public float trotSpeed;
     public float gallopSpeed;
 
-    public Animator anim;
+    public Animator animator;
 
     private bool gallop;
     private List<Cow> cows;
@@ -37,11 +37,12 @@ public class PlayerControllerScript : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            gallop= false;
+            gallop = false;
         }
 
-        /*if (rb.velocity.magnitude < 0.1) anim.Play("player");
-        else anim.Play("run");*/
+        animator.SetFloat("speed", rb.velocity.magnitude);
+        animator.SetBool("galloping", gallop);
+        /*animator.SetBool("lassoing", );*/
     }
 
     private void FixedUpdate()
