@@ -39,7 +39,7 @@ public class RopeController : MonoBehaviour
 
     public void breakRope()
     {
-        player.transform.GetChild(0).GetComponent<PatchLassoController>().roping = false;
+        player.transform.GetChild(0).GetComponent<PatchLassoController>().ropping = false;
         cow.GetComponent<CowBehaviour>().wanderState();
         cow.tag = "Cow";
         player.GetComponent<PlayerControllerScript>().removeCow(GetComponent<Cow>());

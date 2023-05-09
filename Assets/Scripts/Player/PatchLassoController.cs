@@ -11,10 +11,9 @@ public class PatchLassoController : MonoBehaviour
     public GameObject rope;
     public List<GameObject> ropes;
     public float ropeMaxDist;
-    public bool roping;
+    public bool ropping;
     public Transform hand;
-    public Animator animator;
-
+    
 
     private Rigidbody2D rb;
     private LineRenderer lr;
@@ -45,14 +44,14 @@ public class PatchLassoController : MonoBehaviour
             lr.positionCount = 0;
             cl.enabled = false;
         }
-        if (Input.GetMouseButton(0) && !roping) lr.positionCount = 2;
+        if (Input.GetMouseButton(0) && !ropping) lr.positionCount = 2;
         
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Input.GetMouseButton(0) && !roping)
+        if(Input.GetMouseButton(0) && !ropping)
         {
             cl.enabled = true;
             angle += rotationSpeed;
@@ -63,16 +62,9 @@ public class PatchLassoController : MonoBehaviour
 
             transform.position = new Vector2(x, y);
 
-            animator.SetBool("lassoing", true);
-
             return;
         }
-        else if(!roping)
-        {
-            animator.SetBool("lassoing", false);
-        }
-
-        if (roping)
+        if (ropping)
             curRadius = 0;
         
         if (curRadius > 0)
@@ -93,7 +85,7 @@ public class PatchLassoController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Cow")
         {
-            roping = true;
+            ropping = true;
             CowBehaviour cow = collision.gameObject.GetComponent<CowBehaviour>();
             moo = cow;
             cow.player = player;
