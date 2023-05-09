@@ -1,0 +1,365 @@
+fileFormatVersion: 2
+guid: 8df086461d057ed4086e34a9544b176b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: galloping_animation_arm_down_0
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 7
+        width: 421
+        height: 477
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3718493ba4c73f149981dbbb96b5ed09
+      internalID: 484079753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galloping_animation_arm_down_2
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 10
+        width: 388
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5dbac28cb17864e9cbe94ec3ffef8c
+      internalID: 804032601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galloping_animation_arm_down_5
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 10
+        width: 366
+        height: 475
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029f23bb666d53c4ba1eed1e140d90ea
+      internalID: 1338243488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galloping_animation_arm_down_8
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 9
+        width: 417
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82ade8a06a36c640bce8c6452fe1a0e
+      internalID: -339696978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galloping_animation_arm_down_9
+      rect:
+        serializedVersion: 2
+        x: 2563
+        y: 9
+        width: 402
+        height: 474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994f1d2fc099fb947a07f737fd5bf041
+      internalID: 217023157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galloping_animation_arm_down_10
+      rect:
+        serializedVersion: 2
+        x: 3034
+        y: 7
+        width: 371
+        height: 475
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0091ffd958dfebf4e960c3e61e4bb494
+      internalID: -633025230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galloping_animation_arm_down_12
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 11
+        width: 407
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc6537556234044a8da8780e61c18ba
+      internalID: -991546519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galloping_animation_arm_down_51
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 8
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bb9574cc293bb44a5615e5f138b5d7
+      internalID: -394006609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: galloping_animation_arm_down_52
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 9
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884348095480f1b43b2d8879b0b2cb73
+      internalID: -230455111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      galloping_animation_arm_down_38: 117048155
+      galloping_animation_arm_down_31: 1250157726
+      galloping_animation_arm_down_32: 1418058009
+      galloping_animation_arm_down_46: -104364726
+      galloping_animation_arm_down_23: -1016999405
+      galloping_animation_arm_down_36: -885677297
+      galloping_animation_arm_down_49: -969270359
+      galloping_animation_arm_down_14: 38927742
+      galloping_animation_arm_down_28: -1790502178
+      galloping_animation_arm_down_35: 649527015
+      galloping_animation_arm_down_30: 2051062986
+      galloping_animation_arm_down_17: -1074794456
+      galloping_animation_arm_down_40: 1793037506
+      galloping_animation_arm_down_19: -439404962
+      galloping_animation_arm_down_41: 466906036
+      galloping_animation_arm_down_13: -203208628
+      galloping_animation_arm_down_51: -394006609
+      galloping_animation_arm_down_21: -1720751410
+      galloping_animation_arm_down_34: -777412474
+      galloping_animation_arm_down_2: 804032601
+      galloping_animation_arm_down_29: 1839257042
+      galloping_animation_arm_down_47: -1641456082
+      galloping_animation_arm_down_6: 978399933
+      galloping_animation_arm_down_12: -991546519
+      galloping_animation_arm_down_15: -1111533302
+      galloping_animation_arm_down_45: 1476657144
+      galloping_animation_arm_down_44: -1652960475
+      galloping_animation_arm_down_10: -633025230
+      galloping_animation_arm_down_0: 484079753
+      galloping_animation_arm_down_27: -2000426270
+      galloping_animation_arm_down_5: 1338243488
+      galloping_animation_arm_down_11: -868895151
+      galloping_animation_arm_down_9: 217023157
+      galloping_animation_arm_down_39: -1518217014
+      galloping_animation_arm_down_22: -397840239
+      galloping_animation_arm_down_48: -1019910276
+      galloping_animation_arm_down_52: -230455111
+      galloping_animation_arm_down_20: -924341958
+      galloping_animation_arm_down_43: -327003395
+      galloping_animation_arm_down_24: -302709892
+      galloping_animation_arm_down_8: -339696978
+      galloping_animation_arm_down_25: -1459564034
+      galloping_animation_arm_down_4: -1495308925
+      galloping_animation_arm_down_37: 1585844885
+      galloping_animation_arm_down_42: 6454711
+      galloping_animation_arm_down_50: 514696488
+      galloping_animation_arm_down_3: -1301449433
+      galloping_animation_arm_down_1: 426771143
+      galloping_animation_arm_down_16: 206654222
+      galloping_animation_arm_down_18: -42678528
+      galloping_animation_arm_down_33: 844880012
+      galloping_animation_arm_down_26: -995295683
+      galloping_animation_arm_down_7: 2090490175
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

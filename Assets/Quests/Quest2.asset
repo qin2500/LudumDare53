@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Quest2
   m_EditorClassIdentifier: 
   name: Get Drunk
-  timeLimit: 720
-  questActive: 0
+  timeLimit: 20
+  questActive: 1
+  text: 
   requiredCows: 04000000020000000000000000000000
