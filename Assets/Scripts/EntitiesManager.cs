@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class EntitiesManager : MonoBehaviour
 {
@@ -9,11 +10,6 @@ public class EntitiesManager : MonoBehaviour
 
     public int maxNumCows;
     public Cow[] cowPrefabs;
-
-    public float xMin;
-    public float yMin;
-    public float xMax;
-    public float yMax;
 
     private List<Cow> cowEntities;
     private List<Cow> questCows;
@@ -36,25 +32,29 @@ public class EntitiesManager : MonoBehaviour
     public void addQuestCows(int[] cows)
     {
         List<Cow> replacements = new List<Cow>();
+        int index = 0;
 
         foreach (Cow cow in cowEntities)
         {
             Vector2 location = cow.transform.position;
 
-            if (((Vector2) player.transform.position - location).magnitude > 15 && !questCows.Contains(cow))
+            if (((Vector2)player.transform.position - location).magnitude > 15 && !questCows.Contains(cow))
             {
                 replacements.Add(cow);
             }
         }
 
-        for (int j=0; j < cows.Length; j++)
+        foreach (Cow cow in replacements)
         {
-            Vector2 location = cowEntities[j].transform.position;
-            Destroy(cowEntities[j]);
+            Vector2 location = cow.transform.position;
 
-            cowEntities[j] = Instantiate<Cow>(cowPrefabs[cows[j]]);
-            cowEntities[j].transform.position = location;
-            questCows.Add(cowEntities[j]);
+            cowEntities.Remove(cow);
+            DestroyImmediate(cow);
+
+            Cow newCow = Instantiate(cowPrefabs[cows[index]]);
+            cowEntities.Add(newCow);
+            newCow.transform.position = location;
+            questCows.Add(newCow);
         }
     }
 
@@ -70,25 +70,45 @@ public class EntitiesManager : MonoBehaviour
                 if(questSucess)
                 {
                     cowEntities.Remove(cow);
-                    Destroy(cow);
+                    DestroyImmediate(cow);
                 }
             }
         }
-
         spawnCows();
     }
 
     private void spawnCows()
     {
-        for (int i = cowEntities.Count; i < maxNumCows; i++)
+        int amount = maxNumCows - cowEntities.Count;
+
+        Debug.Log(amount + ": " + cowEntities.Count);
+
+        int tierOne = amount / 2;
+        int tierTwo = amount / 3;
+        int tierThree = amount / 6;
+
+        /*spawnCowsInBox(0, 2, -30, 90, -30, 80, tierOne);
+        spawnCowsInBox(2, 4, -60, 130, -60, 100, tierTwo);
+        spawnCowsInBox(4, 6, -80, 160, -80, 120, tierThree);*/
+
+        spawnCowsInBox(0, 2, 0, 0, 0, 0, tierOne);
+        spawnCowsInBox(2, 4, 90, 90, 0, 0, tierTwo);
+        spawnCowsInBox(4, 6, 180, 180, 0, 0, tierThree);
+    }
+
+    private void spawnCowsInBox(int indexStart, int indexEnd, float xMin, float xMax, float yMin, float yMax, int amount)
+    {
+        if (amount == 0) return;
+
+        for (int i = 0; i < amount; i++)
         {
-            int cowType = Random.Range(0, cowPrefabs.Length);
+            int cowType = Random.Range(indexStart, indexEnd);
             Vector2 location = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
 
             Cow spawn = Instantiate(cowPrefabs[cowType]);
             spawn.transform.position = location;
 
-            cowEntities.Append<Cow>(spawn);
+            cowEntities.Add(spawn);
         }
     }
 }

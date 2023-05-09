@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 167812530322352240}
   - component: {fileID: 167812530322352241}
   - component: {fileID: 167812530322352246}
+  - component: {fileID: 5699934323323247725}
   m_Layer: 0
   m_Name: Mailbox
   m_TagString: Untagged
@@ -258,8 +259,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   client: {fileID: 3407488283631044866, guid: 1dac3cd4cfca2cc408e4487be6f50da1, type: 3}
-  entitiesManager: {fileID: 0}
+  entitiesManager: {fileID: 5699934323323247725}
+  playerInteraction: {fileID: 167812530322352241}
   possibleQuests:
   - {fileID: 11400000, guid: a821ea27e828f4548b81791e4979bb33, type: 2}
   - {fileID: 11400000, guid: 952dd740591c4cf4e855e504cdcd70fd, type: 2}
   - {fileID: 11400000, guid: 40cffd62bbc4fd746802ad5401400890, type: 2}
+--- !u!114 &5699934323323247725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167812530322352247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec8f197cc747f14daad46ced9062832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  maxNumCows: 30
+  cowPrefabs:
+  - {fileID: 5224860004573513317, guid: 9f08746ed447b6c4eaec92f60ce97729, type: 3}
+  - {fileID: 9102353056144884406, guid: bf0b347c2838eec4fa2fbeaf20427b1d, type: 3}
+  - {fileID: 6579417028708040558, guid: 3f584964338a0cc43a7e0c26bd314ff1, type: 3}
+  - {fileID: 5224860004573513317, guid: a12268f186946e64c9f311c97826813b, type: 3}
+  - {fileID: 5224860004573513317, guid: f0771cf828cb790478936195f7545b11, type: 3}
+  - {fileID: 5224860004573513317, guid: 42c4f42953d030345a3404ac710232d5, type: 3}
