@@ -15,8 +15,7 @@ public class ClientController : MonoBehaviour
         playerInteraction.player = questManager.player;
         playerControllerScript = questManager.player.GetComponent<PlayerControllerScript>();
 
-        /*client = questManager.getActiveQuests().Last().getClient();*/
-        client = questManager.getActiveQuest().getClient();
+        client = questManager.getActiveQuests().Last().getClient();
         prompt = transform.GetChild(0).gameObject;
 
         this.transform.position = client.getLocation();

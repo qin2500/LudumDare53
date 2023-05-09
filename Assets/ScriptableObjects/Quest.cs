@@ -12,7 +12,6 @@ public class Quest : ScriptableObject
 
     private float timePassed;
     private Client client;
-    private GameObject clientInstance;
 
     public int[] requiredCows;
 
@@ -43,16 +42,6 @@ public class Quest : ScriptableObject
     public float getTimePassed()
     {
         return this.timePassed;
-    }
-
-    public void setClientInstance(GameObject clientInstance)
-    {
-        this.clientInstance = clientInstance;
-    }
-
-    public void destoryClientInstance()
-    {
-        DestroyImmediate(this.clientInstance);
     }
 
     public Client getClient()

@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: galloping_animation_arm_up_1
+      name: mcgriddy_galloping_animation_arm_up_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 1030
-        y: 11
-        width: 421
-        height: 477
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20e40296621447846a18db047e315391
-      internalID: 1041283141
+      spriteID: 39ff4db1d6c29e24b96758a2c426fbe8
+      internalID: -2117292679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: galloping_animation_arm_up_3
+      name: mcgriddy_galloping_animation_arm_up_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 1558
-        y: 10
-        width: 388
-        height: 476
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eba111a32dcde8f4180f83782f896a6c
-      internalID: 762593107
+      spriteID: 3d18f64e914f78440af4b6b754a7f320
+      internalID: -2073755845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: galloping_animation_arm_up_5
+      name: mcgriddy_galloping_animation_arm_up_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 2049
-        y: 10
-        width: 418
-        height: 477
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e49751de9c584b4099d8debf98cb956
-      internalID: -810491444
+      spriteID: 259c3f0e92141844ba68b121858e1b59
+      internalID: 806945220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: galloping_animation_arm_up_6
+      name: mcgriddy_galloping_animation_arm_up_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 54
-        y: 13
-        width: 407
-        height: 465
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f91f3c5d651696c4ebe41dc53fbdc655
-      internalID: 2139793728
+      spriteID: faf714ca19c81064aa2b4d783d7c4f25
+      internalID: -69424717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: galloping_animation_arm_up_7
+      name: mcgriddy_galloping_animation_arm_up_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 548
-        y: 10
-        width: 367
-        height: 475
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c398e479bcbf424c8484de83ea5519d
-      internalID: -298577241
+      spriteID: a59bf7f8f6e5a0344899e4fe085c21ef
+      internalID: -638077895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: galloping_animation_arm_up_11
+      name: mcgriddy_galloping_animation_arm_up_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2552
-        y: 10
-        width: 411
-        height: 473
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b06b20b3b2a073f45b9cec8d7ba1da6e
-      internalID: -586200614
+      spriteID: cf1295c7b0509cd40bfd80dd98a477f5
+      internalID: 42254630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: galloping_animation_arm_up_12
+      name: mcgriddy_galloping_animation_arm_up_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 3034
-        y: 7
-        width: 371
-        height: 475
+        x: 3000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,29 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daeb0e3e553e28f4386a238e119b4bf1
-      internalID: -788745806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: galloping_animation_arm_up_48
-      rect:
-        serializedVersion: 2
-        x: 1186
-        y: 8
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73b5cfc0a4e70a044bfb581648ed2914
-      internalID: 457751265
+      spriteID: 71ffe0efa5723fc4c88942cccbf9efb9
+      internalID: -2064174527
       vertices: []
       indices: 
       edges: []
@@ -295,56 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      galloping_animation_arm_up_4: -1598983103
-      galloping_animation_arm_up_3: 762593107
-      galloping_animation_arm_up_45: -555354398
-      galloping_animation_arm_up_25: -880611835
-      galloping_animation_arm_up_21: 550086899
-      galloping_animation_arm_up_27: -844579410
-      galloping_animation_arm_up_34: -1415902956
-      galloping_animation_arm_up_38: -1824618221
-      galloping_animation_arm_up_7: -298577241
-      galloping_animation_arm_up_11: -586200614
-      galloping_animation_arm_up_33: 1850665420
-      galloping_animation_arm_up_9: 2066427817
-      galloping_animation_arm_up_15: 45299354
-      galloping_animation_arm_up_24: -681024627
-      galloping_animation_arm_up_46: 747198189
-      galloping_animation_arm_up_6: 2139793728
-      galloping_animation_arm_up_32: 582872872
-      galloping_animation_arm_up_19: 1463626832
-      galloping_animation_arm_up_31: 1180381180
-      galloping_animation_arm_up_17: 376383869
-      galloping_animation_arm_up_44: 457200117
-      galloping_animation_arm_up_41: 332865463
-      galloping_animation_arm_up_29: 733988178
-      galloping_animation_arm_up_14: -2131392622
-      galloping_animation_arm_up_35: 1347826501
-      galloping_animation_arm_up_23: 542135567
-      galloping_animation_arm_up_10: 950172172
-      galloping_animation_arm_up_0: -2076133208
-      galloping_animation_arm_up_39: -1956632091
-      galloping_animation_arm_up_1: 1041283141
-      galloping_animation_arm_up_37: 1191130194
-      galloping_animation_arm_up_43: 1530853366
-      galloping_animation_arm_up_16: 33713021
-      galloping_animation_arm_up_26: -1575676790
-      galloping_animation_arm_up_2: -2037372144
-      galloping_animation_arm_up_13: -1002373680
-      galloping_animation_arm_up_42: 1688489052
-      galloping_animation_arm_up_20: 723078083
-      galloping_animation_arm_up_12: -788745806
-      galloping_animation_arm_up_22: -1279936198
-      galloping_animation_arm_up_36: -1982926403
-      galloping_animation_arm_up_48: 457751265
-      galloping_animation_arm_up_47: -1674817562
-      galloping_animation_arm_up_5: -810491444
-      galloping_animation_arm_up_30: 1489331131
-      galloping_animation_arm_up_49: 680803409
-      galloping_animation_arm_up_40: -852296975
-      galloping_animation_arm_up_18: 125403536
-      galloping_animation_arm_up_28: 778179754
-      galloping_animation_arm_up_8: -555236481
+      mcgriddy_galloping_animation_arm_up_spritesheet_6: -2064174527
+      mcgriddy_galloping_animation_arm_up_spritesheet_2: 806945220
+      mcgriddy_galloping_animation_arm_up_spritesheet_5: 42254630
+      mcgriddy_galloping_animation_arm_up_spritesheet_1: -2073755845
+      mcgriddy_galloping_animation_arm_up_spritesheet_0: -2117292679
+      mcgriddy_galloping_animation_arm_up_spritesheet_4: -638077895
+      mcgriddy_galloping_animation_arm_up_spritesheet_3: -69424717
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1

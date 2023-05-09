@@ -48,7 +48,7 @@ public class LassoBehaviour : MonoBehaviour
                 Debug.Log("Lassoed!!!");
                 GetComponent<CowBehaviour>().followState();
                 timeToLassoAC = 0;
-                player.transform.GetChild(0).GetComponent<PatchLassoController>().roping = false;
+                player.transform.GetChild(0).GetComponent<PatchLassoController>().ropping = false;
                 this.gameObject.tag = "Untagged";
                 
                 player.GetComponent<PlayerControllerScript>().addCow(GetComponent<Cow>());
