@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97b411a2b4fcfbc489b965aa7d1e35e3, type: 3}
-  m_Name: Test Cow
+  m_Script: {fileID: 11500000, guid: 0aa183f71cd27b04b8278892c01c03b8, type: 3}
+  m_Name: NormalCowFart
   m_EditorClassIdentifier: 
-  wanderingEntity: {fileID: 11400000, guid: 86dc5221f1053cb45bce24061a8a063e, type: 2}
-  lassoed: 0
-  scared: 0
-  sprite: {fileID: 0}
+  fartColor: {r: 1, g: 1, b: 1, a: 1}
+  fartSize: 2
+  fartFrequency: 1
+  bulletSpeed: 3
+  spread: 90
+  followsPlayer: 0
+  isShotgun: 1
+  bulletCount: 2
