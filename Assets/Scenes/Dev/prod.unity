@@ -998,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1791791097
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1404,6 +1404,7 @@ MonoBehaviour:
   growthSpeed: 8
   radius: 5
   rope: {fileID: 5515879131626847920, guid: f03f88d77520c3d468bb0e880cb1b854, type: 3}
+  ropes: []
   ropeMaxDist: 100
   ropping: 0
   hand: {fileID: 785563286}
@@ -1521,3 +1522,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trotSpeed: 10
   gallopSpeed: 15
+  anim: {fileID: 0}
