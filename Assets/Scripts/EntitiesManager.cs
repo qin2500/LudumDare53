@@ -81,15 +81,11 @@ public class EntitiesManager : MonoBehaviour
     {
         int amount = maxNumCows - cowEntities.Count;
 
-        Debug.Log(amount + ": " + cowEntities.Count);
+        /*Debug.Log(amount + ": " + cowEntities.Count);*/
 
         int tierOne = amount / 2;
         int tierTwo = amount / 3;
         int tierThree = amount / 6;
-
-        /*spawnCowsInBox(0, 2, -30, 90, -30, 80, tierOne);
-        spawnCowsInBox(2, 4, -60, 130, -60, 100, tierTwo);
-        spawnCowsInBox(4, 6, -80, 160, -80, 120, tierThree);*/
 
         spawnCowsInBox(0, 2, 0, 0, 0, 0, tierOne);
         spawnCowsInBox(2, 4, 90, 90, 0, 0, tierTwo);

@@ -97,6 +97,8 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 gm.GetComponent<RopeController>().breakRope();
             }
+
+            Debug.Log("hit");
         }
     }
 }

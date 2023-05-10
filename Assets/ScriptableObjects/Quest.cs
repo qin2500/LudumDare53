@@ -23,7 +23,7 @@ public class Quest : ScriptableObject
 
     public void startQuest()
     {
-        Debug.Log(name + " started");
+        /*Debug.Log(name + " started");*/
 
         questActive = true;
 

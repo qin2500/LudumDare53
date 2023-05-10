@@ -8,16 +8,17 @@ public class BulletController : MonoBehaviour
     public float speed;
     public float lifeSpan;
     public GameObject deathParticle;
-    // Start is called before the first frame update
+
+    private Vector2 travelDir;
+
     void Start()
     {
         Invoke("destroy", lifeSpan);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        transform.Translate(travelDir * speed * Time.deltaTime);
     }
     private void destroy()
     {
@@ -28,5 +29,10 @@ public class BulletController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         destroy();
+    }
+
+    public void setTravelDir(Vector2 dir)
+    {
+        this.travelDir = dir;
     }
 }

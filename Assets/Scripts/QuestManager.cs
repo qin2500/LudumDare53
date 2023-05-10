@@ -81,7 +81,7 @@ public class QuestManager : MonoBehaviour
     }
     public void concludeQuest(Quest quest, bool sucess)
     {
-        Debug.Log(quest.name + " : sucess: " + sucess);
+        /*Debug.Log(quest.name + " : sucess: " + sucess);*/
         /*visibleQuests.Remove(quest);*/
         quest.questActive = false;
         quest.destoryClientInstance();
@@ -99,7 +99,7 @@ public class QuestManager : MonoBehaviour
     private void generateNewQuest()
     {
         Quest newQuest = possibleQuests[Random.Range(0, possibleQuests.Length)];
-        Debug.Log(newQuest.name + " init");
+        /*Debug.Log(newQuest.name + " init");*/
         currentQuest = newQuest;
 
         entitiesManager.addQuestCows(newQuest.requiredCows);

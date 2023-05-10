@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BanditController : MonoBehaviour
 {
     public bool stunned;
     public WanderController wanderController;
-    public SteeringAi steer;
-
+    public GameObject player;
     public GameObject bullet;
+    public SteeringAi steer;
 
     public float moveSpeed;
     public float bulletSpeed;
@@ -18,13 +19,11 @@ public class BanditController : MonoBehaviour
 
     public GameObject Muzzle1;
     public GameObject Muzzle2;  
-
     
     public string currentState;
 
-
     private Rigidbody2D rb;
-    public GameObject player;
+    private float fireAC = 0;
 
     void Start()
     {
@@ -40,15 +39,12 @@ public class BanditController : MonoBehaviour
         wanderState();
         steer.enabled = false;
     }
-
-    private float fireAC = 0;
     // Update is called once per frame
     void Update()
     {
         //default state is wander
 
         //when detect player within range x, attack()
-
 
         //states:
 
@@ -58,37 +54,24 @@ public class BanditController : MonoBehaviour
         //add a little spread to the shooting so its not aimbot, but i can handle that part just get the pathfinding done
         //if possible have the bandit follow a set of predetermined points on the map
         // - basically a world roaming path
-        if(!player)
-        {
-            steer.enabled = false;
-            Collider2D[] vision = Physics2D.OverlapCircleAll(transform.position, detectionRange);
-            foreach(Collider2D c in vision)
-            {
-                if (c.gameObject.tag.Equals("Player"))
-                {
-                    player = c.gameObject;
-                }
-            }
-        }
+
+        float dist = Vector2.Distance(transform.position, player.transform.position);
         
-        if(player)
+        if(dist < fireRange)
         {
-            float dist = Vector2.Distance(transform.position, player.transform.position);
-            if(dist < fireRange)
+            fireAC += Time.deltaTime;
+
+            if (fireAC > fireRate)
             {
-                if (fireAC + Time.deltaTime >= fireRate)
-                {
-                    fire();
-                }
-                else fireRate += Time.deltaTime;
-                steer.enabled = false;
+                fire();
             }
-            else
-            {
-                followState();
-            }
+            steer.enabled = false;
         }
-            
+        else
+        {
+            followState();
+            fireAC = 0;
+        }
     }
     public void wanderState()
     {
@@ -104,20 +87,20 @@ public class BanditController : MonoBehaviour
         steer.flee = false;
         steer.speed = moveSpeed;
         wanderController.enabled = false;
-
     }
 
-    public void  fire()
+    public void fire()
     {
         GameObject bulletInstance = Instantiate(bullet, Muzzle1.transform.position, Quaternion.identity);
-        Vector2 dir = Muzzle1.transform.position - transform.position;
-        bulletInstance.transform.up = dir;
+        Vector2 dir = (player.transform.position- Muzzle1.transform.position).normalized;
+        bulletInstance.GetComponent<BulletController>().setTravelDir(dir);
         bulletInstance.GetComponent<BulletController>().speed = bulletSpeed;
 
         bulletInstance = Instantiate(bullet, Muzzle2.transform.position, Quaternion.identity);
-        dir = Muzzle2.transform.position - transform.position;
-        bulletInstance.transform.up = dir;
+        dir = (player.transform.position - Muzzle2.transform.position).normalized;
+        bulletInstance.GetComponent<BulletController>().setTravelDir(dir);
         bulletInstance.GetComponent<BulletController>().speed = bulletSpeed;
 
+        fireAC = 0;
     }
 }
