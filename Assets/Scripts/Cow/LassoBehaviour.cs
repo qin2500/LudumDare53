@@ -8,7 +8,12 @@ using UnityEngine;
 public class LassoBehaviour : MonoBehaviour
 {
     public GameObject player;
+<<<<<<< Updated upstream
     public GameObject fart;   
+=======
+    
+    
+>>>>>>> Stashed changes
 
     public float fartFrequency;
     public float lassoedSpeed;
@@ -19,12 +24,27 @@ public class LassoBehaviour : MonoBehaviour
     private SteeringAi steer;
     public float timeToLassoAC;
 
+<<<<<<< Updated upstream
+=======
+    [HideInInspector]
+    public FartCannonController fartController;
+
+    private float fartAC;
+
+>>>>>>> Stashed changes
     void Start()
     {
         steer = GetComponent<SteeringAi>();
         steer.enabled= true;
         steer.flee = true;
         steer.speed = lassoedSpeed;
+<<<<<<< Updated upstream
+=======
+
+        
+        fartController = GetComponent<FartCannonController>();
+        fartController.player = player;
+>>>>>>> Stashed changes
     }
     // Update is called once per frame
     void Update()
@@ -50,6 +70,19 @@ public class LassoBehaviour : MonoBehaviour
             }
         }
         else timeToLassoAC = 0;
+<<<<<<< Updated upstream
+=======
+
+
+        //farting logic
+
+        if (fartAC + Time.deltaTime > fartController.fart.fartFrequency)
+        {
+            fartController.fire();
+            fartAC = 0;
+        }
+        else fartAC += Time.deltaTime;
+>>>>>>> Stashed changes
     }
 
     private void OnDrawGizmosSelected()
@@ -60,5 +93,9 @@ public class LassoBehaviour : MonoBehaviour
 
     }
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 }

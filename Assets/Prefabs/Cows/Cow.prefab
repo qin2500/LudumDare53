@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 5492449233646980380}
   - component: {fileID: 5492449233646980353}
   - component: {fileID: 5492449233646980358}
+  - component: {fileID: -3358514201504671413}
   - component: {fileID: 5492449233646980357}
   - component: {fileID: 5492449233646980356}
   - component: {fileID: 5492449233646980359}
@@ -600,12 +601,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  fart: {fileID: 0}
-  fartFrequency: 0
   lassoedSpeed: 9
   timeToLasso: 5
   lassoRadius: 7
+  rope: {fileID: 0}
   timeToLassoAC: 0
+  fartController: {fileID: 0}
+--- !u!114 &-3358514201504671413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492449233646980379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0244c4775ac15084c9b63a84cac7f5d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fart: {fileID: 11400000, guid: 812c0b8015a245e4284fb49a682d0c34, type: 2}
+  fartCannon: {fileID: 0}
+  fartBullet: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &5492449233646980357
 MonoBehaviour:
   m_ObjectHideFlags: 0
