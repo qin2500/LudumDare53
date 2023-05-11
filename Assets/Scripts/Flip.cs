@@ -7,7 +7,7 @@ public class Flip : MonoBehaviour
     public GameObject sprite;
     public bool faceingRight;
     private Rigidbody2D rb;
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,9 +18,9 @@ public class Flip : MonoBehaviour
         if (rb.velocity.x > 0 && !faceingRight) flip();
         else if (rb.velocity.x < 0 && faceingRight) flip();
     }
+
     private void flip()
     {
-
         faceingRight = !faceingRight;
         Vector3 scaler = sprite.transform.localScale;
         scaler.x *= -1;

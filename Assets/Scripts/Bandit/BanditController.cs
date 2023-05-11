@@ -24,6 +24,7 @@ public class BanditController : MonoBehaviour
 
     private Rigidbody2D rb;
     private float fireAC = 0;
+    private bool faceRight = false;
 
     void Start()
     {
@@ -42,19 +43,6 @@ public class BanditController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //default state is wander
-
-        //when detect player within range x, attack()
-
-        //states:
-
-        //attack: walk up to a certain distance from the player and begin shooting
-        //when player runs a certain distance away from the bandit, reset state to wandering
-        //bandit has infinite ammo
-        //add a little spread to the shooting so its not aimbot, but i can handle that part just get the pathfinding done
-        //if possible have the bandit follow a set of predetermined points on the map
-        // - basically a world roaming path
-
         float dist = Vector2.Distance(transform.position, player.transform.position);
         
         if(dist < fireRange)
@@ -93,6 +81,17 @@ public class BanditController : MonoBehaviour
     {
         GameObject bulletInstance = Instantiate(bullet, Muzzle1.transform.position, Quaternion.identity);
         Vector2 dir = (player.transform.position- Muzzle1.transform.position).normalized;
+
+        Debug.Log(dir.x + ", " + transform.localScale.x);
+        if (dir.x > 0 && transform.localScale.x > 0)
+        {
+            flip();
+        }
+        else if (dir.x < 0 && transform.localScale.x < 0)
+        {
+            flip();
+        }
+
         bulletInstance.GetComponent<BulletController>().setTravelDir(dir);
         bulletInstance.GetComponent<BulletController>().speed = bulletSpeed;
 
@@ -102,5 +101,16 @@ public class BanditController : MonoBehaviour
         bulletInstance.GetComponent<BulletController>().speed = bulletSpeed;
 
         fireAC = 0;
+    }
+    private void flip()
+    {
+        Debug.Log("flip");
+
+        faceRight = !faceRight;
+
+        Vector2 scale = transform.localScale;
+        scale.x *= -1;
+
+        transform.localScale = scale;
     }
 }

@@ -34,11 +34,11 @@ public class PlayerControllerScript : MonoBehaviour
 
         if (inputH > 0 && !faceRight)
         {
-            flipSprite();
+            flip();
         }
-        if (inputH < 0 && faceRight)
+        else if (inputH < 0 && faceRight)
         {
-            flipSprite();
+            flip();
         }
 
         if (!gallop)
@@ -78,11 +78,11 @@ public class PlayerControllerScript : MonoBehaviour
         return cows;
     }
 
-    private void flipSprite()
+    private void flip()
     {
         faceRight = !faceRight;
 
-        Vector3 scale = transform.localScale;
+        Vector2 scale = transform.localScale;
         scale.x *= -1;
 
         transform.localScale = scale;
