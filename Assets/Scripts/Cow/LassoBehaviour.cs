@@ -10,8 +10,8 @@ public class LassoBehaviour : MonoBehaviour
 {
     [HideInInspector]
     public GameObject player;
-    public FartPattern fart;
-    public GameObject fartBullet;
+    private GunController gun;
+    
     public GameObject fartCannon;
 
     public float lassoedSpeed;
@@ -34,6 +34,7 @@ public class LassoBehaviour : MonoBehaviour
         steer.speed = lassoedSpeed;
 
         fartCannon.GetComponent<FollowPlayerDirection>().player = player; 
+        gun = GetComponent<GunController>();
     }
     // Update is called once per frame
     void Update()
@@ -63,9 +64,9 @@ public class LassoBehaviour : MonoBehaviour
 
         //farting logic
 
-        if (fartAC + Time.deltaTime > fart.fartFrequency)
+        if (fartAC + Time.deltaTime > gun.fart.fartFrequency)
         {
-            fire();
+            gun.fire();
             fartAC = 0;
         }
         else fartAC += Time.deltaTime;
@@ -79,57 +80,7 @@ public class LassoBehaviour : MonoBehaviour
 
     }
 
-    public void fire()
-    {
-        if(fart.isShotgun && fart.spread > 1)
-        {
-            shotGunFire();
-        }
-        else
-        {
-            float thisRot;
-            float angle;
-            if (fart.followsPlayer) thisRot = fartCannon.transform.rotation.eulerAngles.z;
-            else thisRot = Random.Range(360f, 0f);
-            if (fart.spread < 1) angle = thisRot;
-            else
-            {
-                float upperBound = thisRot - (fart.spread / 2);
-                float lowerBound = thisRot + (fart.spread / 2);
-                angle = Random.Range(lowerBound, upperBound);
-            }
-            makeFart(angle);
-        }
-    }
 
-    private void shotGunFire()
-    {
-        if (!fart.isShotgun) return;
-        float thisRot;
-        float angle;
-        if (fart.followsPlayer) thisRot = fartCannon.transform.rotation.eulerAngles.z;
-        else thisRot = Random.Range(360f, 0f);
-        float increment = fart.spread / fart.bulletCount;
-        angle = thisRot - (fart.spread / 2);
-
-        for(int i=0; i<fart.bulletCount; i++)
-        {
-            makeFart(angle);
-            angle += increment;
-        }
-    }
-
-    private void makeFart(float angle)
-    {
-        GameObject bullet =  Instantiate(fartBullet, fartCannon.transform.position, Quaternion.Euler(0, 0, angle));       
-        FartController controller = bullet.GetComponent<FartController>();
-        SpriteRenderer sprite = bullet.GetComponent<SpriteRenderer>();
-
-        bullet.transform.localScale *= fart.fartSize;
-        sprite.color = fart.fartColor;
-        controller.speed = fart.bulletSpeed;
-        
-    }
 
 
 }

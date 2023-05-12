@@ -23,4 +23,20 @@ public class FartController : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject other = collision.gameObject;
+        if (other.tag.Equals("Player"))
+        {
+            PatchLassoController lasso = other.transform.GetChild(0).GetComponent<PatchLassoController>();
+
+            foreach(GameObject rope in lasso.ropes)
+            {
+                if(rope)rope.GetComponent<RopeController>().breakRope();
+            }
+            destroy();
+        }
+        
+    }
 }
