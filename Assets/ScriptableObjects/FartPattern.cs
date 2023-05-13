@@ -13,6 +13,8 @@ public class FartPattern : ScriptableObject
     public float spread;
 
     public bool followsPlayer;
+    [HideInInspector]
+    public bool bulletSpeedisRelativeToCow;
 
     //shotgun
     public bool isShotgun;

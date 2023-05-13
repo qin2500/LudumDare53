@@ -36,7 +36,7 @@ public class WanderController : MonoBehaviour
     {
         travelDist = Vector2.Distance(transform.position, lastPos);
 
-        if (travelDist >= wanderRange || rb.velocity.magnitude < 0.01f)
+        if (travelDist >= wanderRange || rb.velocity.magnitude < entity.wanderSpeed/2)
         {
             rb.velocity = Vector2.zero;
 

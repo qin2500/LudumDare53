@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0aa183f71cd27b04b8278892c01c03b8, type: 3}
-  m_Name: NormalCowFart
+  m_Name: RobotCowFart
   m_EditorClassIdentifier: 
-  fartColor: {r: 0.85123324, g: 1, b: 0.8160377, a: 1}
-  fartSize: 1
+  fartColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  fartSize: 0.1
   fartFrequency: 2
-  bulletSpeed: 4
-  spread: 90
+  bulletSpeed: 5
+  spread: 360
   followsPlayer: 1
   bulletSpeedisRelativeToCow: 0
   isShotgun: 1
-  bulletCount: 1
+  bulletCount: 6

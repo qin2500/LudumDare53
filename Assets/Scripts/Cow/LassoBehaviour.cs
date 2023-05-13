@@ -31,14 +31,16 @@ public class LassoBehaviour : MonoBehaviour
         steer = GetComponent<SteeringAi>();
         steer.enabled= true;
         steer.flee = true;
-        steer.speed = lassoedSpeed;
 
-        fartCannon.GetComponent<FollowPlayerDirection>().player = player; 
+        Invoke("poopoo", 1);
+         
         gun = GetComponent<GunController>();
     }
     // Update is called once per frame
     void Update()
     {
+        fartCannon.GetComponent<FollowPlayerDirection>().player = player;
+        steer.speed = lassoedSpeed;
         //lassoing logic
         float dist = Vector2.Distance(transform.position, player.transform.position);
         if(Input.GetMouseButtonDown(0)) rope.GetComponent<RopeController>().breakRope();
@@ -78,6 +80,10 @@ public class LassoBehaviour : MonoBehaviour
         Gizmos.DrawWireSphere(this.transform.position, lassoRadius);
                    
 
+    }
+    private void poopoo()
+    {
+        fartCannon.GetComponent<FollowPlayerDirection>().player = player; 
     }
 
 

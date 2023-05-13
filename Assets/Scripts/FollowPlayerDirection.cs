@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FollowPlayerDirection : MonoBehaviour
 {
-    [HideInInspector]
     public GameObject player;
 
     // Update is called once per frame
