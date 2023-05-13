@@ -5504,50 +5504,11 @@ PrefabInstance:
       value: Bandit
       objectReference: {fileID: 0}
     - target: {fileID: 9084388244995341968, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 6661440282129417089, guid: ea6b288c6aad56f4fa244aa9de497b74, type: 3}
-    - target: {fileID: 9084388244995341968, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 8535655945532787212}
-    - target: {fileID: 9084388244995341968, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
-      propertyPath: Muzzle1
-      value: 
-      objectReference: {fileID: 1513800178}
-    - target: {fileID: 9084388244995341968, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
-      propertyPath: Muzzle2
-      value: 
-      objectReference: {fileID: 1513800177}
-    - target: {fileID: 9084388244995341968, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
-      propertyPath: fireRate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084388244995341968, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
-      propertyPath: fireRange
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084388244995341968, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084388244995341968, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
-      propertyPath: bulletSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6777003540096297310, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
---- !u!1 &1513800177 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1920151601852579579, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
-  m_PrefabInstance: {fileID: 1513800176}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1513800178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2992600434984701904, guid: ed8b6bbd93390914893c1a32192c76a8, type: 3}
-  m_PrefabInstance: {fileID: 1513800176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1722549938
 GameObject:
   m_ObjectHideFlags: 0

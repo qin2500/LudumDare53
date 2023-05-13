@@ -727,8 +727,6 @@ GameObject:
   - component: {fileID: 2203384233052276703}
   - component: {fileID: 6768117044950634820}
   - component: {fileID: 7488459695701573815}
-  - component: {fileID: 6427289872045108934}
-  - component: {fileID: 6777003540096297310}
   m_Layer: 0
   m_Name: Bandit
   m_TagString: Untagged
@@ -743,7 +741,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8168439762032863247}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 33, y: 17.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -819,17 +817,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stunned: 0
   wanderController: {fileID: 2203384233052276703}
-  steer: {fileID: 7488459695701573815}
-  bullet: {fileID: 0}
-  moveSpeed: 0
-  bulletSpeed: 0
-  fireRate: 10
-  detectionRange: 20
-  fireRange: 0
-  Muzzle1: {fileID: 0}
-  Muzzle2: {fileID: 0}
-  currentState: 
   player: {fileID: 0}
+  bullet: {fileID: 6661440282129417089, guid: ea6b288c6aad56f4fa244aa9de497b74, type: 3}
+  steer: {fileID: 7488459695701573815}
+  moveSpeed: 10
+  bulletSpeed: 20
+  fireRate: 0.5
+  detectionRange: 20
+  fireRange: 15
+  Muzzle1: {fileID: 2992600434984701904}
+  Muzzle2: {fileID: 1920151601852579579}
+  currentState: 
 --- !u!114 &2203384233052276703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,37 +889,3 @@ MonoBehaviour:
   movementInput: {x: 0, y: 0}
   movementDirectionSolver: {fileID: 2567143154597315390}
   dummy: {fileID: 371285663819913956}
---- !u!114 &6427289872045108934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8168439762032863247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d6711f1edb8fd4eadec98a29656c52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 8168439762032863247}
-  faceingRight: 0
---- !u!95 &6777003540096297310
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8168439762032863247}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 475eaaff6effd7748a572243b6552e6f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

@@ -23,8 +23,8 @@ public class BanditController : MonoBehaviour
     public string currentState;
 
     private Rigidbody2D rb;
+    private bool faceRight;
     private float fireAC = 0;
-    private bool faceRight = false;
 
     void Start()
     {
@@ -40,11 +40,11 @@ public class BanditController : MonoBehaviour
         wanderState();
         steer.enabled = false;
     }
-    // Update is called once per frame
+
     void Update()
     {
         float dist = Vector2.Distance(transform.position, player.transform.position);
-        
+
         if(dist < fireRange)
         {
             fireAC += Time.deltaTime;
@@ -60,6 +60,9 @@ public class BanditController : MonoBehaviour
             followState();
             fireAC = 0;
         }
+
+        if (rb.velocity.x > 0 && !faceRight) flip();
+        else if (rb.velocity.x < 0 && faceRight) flip();
     }
     public void wanderState()
     {
@@ -83,11 +86,11 @@ public class BanditController : MonoBehaviour
         Vector2 dir = (player.transform.position- Muzzle1.transform.position).normalized;
 
         Debug.Log(dir.x + ", " + transform.localScale.x);
-        if (dir.x > 0 && transform.localScale.x > 0)
+        if (dir.x > 0 && !faceRight)
         {
             flip();
         }
-        else if (dir.x < 0 && transform.localScale.x < 0)
+        else if (dir.x < 0 && faceRight)
         {
             flip();
         }
@@ -102,6 +105,7 @@ public class BanditController : MonoBehaviour
 
         fireAC = 0;
     }
+
     private void flip()
     {
         Debug.Log("flip");
